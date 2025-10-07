@@ -28,7 +28,8 @@ DevOps is a set of practices,tools that automate and integrate the processes bet
 Devops engineer is a key role responsibility::
 ================================================
 
-![image](https://github.com/user-attachments/assets/80dbb098-c083-463c-a178-36e265e84767)
+<img width="1129" height="606" alt="image" src="https://github.com/user-attachments/assets/40e07512-2fd0-41c2-a4ff-af183dc4dd47" />
+
 
 1)The devops engineer was responsibility to release the product to the market as soon as possible
 
@@ -52,13 +53,6 @@ Benefits of DevOps ::
 What is Git?
 
 Git is a free, open-source version control system (VCS) that helps developers manage their code. It's the most widely used tool VCS(version control system) Git is fast for committing, branching, merging, and comparing past versions Git is very high Performance and Flexibility,Security.
-
-
-Integrate Git & Github::
-========================
-
-
-![image](https://github.com/user-attachments/assets/39bb9c3a-f7d5-48e6-8a91-0aff6e34be3e)
 
 
 
