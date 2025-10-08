@@ -43,8 +43,11 @@ Benefits of DevOps ::
 ===================
 
 •	Faster software delivery: Reduces lead times and speeds up the software delivery process 
+
 •	Higher software quality: Addresses bugs quicker and improves software quality 
+
 •	Better collaboration: Unifies development and operations teams, enhancing collaboration and efficiency 
+
 •	Competitive advantage: Creates a more nimble software development lifecycle that gives businesses an advantage over their competitors 
 
 
