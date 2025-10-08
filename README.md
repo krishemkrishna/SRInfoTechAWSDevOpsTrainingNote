@@ -292,7 +292,7 @@ Steps::
 
 
 
-1.git clone git@github.com:srinfotechbatch2/SRINfotechDemo.git
+1.git clone git@github.com:srinfotechbatch4/hello-world-java.git
 
 2.cd SRINfotechDemo
 
@@ -309,3 +309,137 @@ Steps::
 8.git pull   --->remote to local
 
 above steps to push some changes from Local to remote repository
+
+
+Session Note::
+===========
+
+>ssh-keygen -t ed25519 -C "your_email@example.com"
+
+>ssh-keygen -t ed25519 -C "srinfotechbatch4@gmail.com"
+
+>git clone <URLof your project>
+
+>git clone git@github.com:srinfotechbatch4/hello-world-java.git
+
+>cd hello-world-java
+
+>git status
+
+>git add --all
+
+>git status
+
+>git commit -m "updated helloworld java file"
+
+>git config --global user.email "srinfotechbatch4@gmail.com"
+>git config --global user.name "srinfotechbatch4"
+
+>git commit -m "updated helloworld java files"
+
+>git push
+
+
+Lab Practice::
+==============
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4
+$ git clone git@github.com:srinfotechbatch4/hello-world-java.git
+Cloning into 'hello-world-java'...
+The authenticity of host 'github.com (20.207.73.82)' can't be established.
+ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'github.com' (ED25519) to the list of known hosts.
+remote: Enumerating objects: 16, done.
+remote: Counting objects: 100% (6/6), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 16 (delta 3), reused 3 (delta 3), pack-reused 10 (from 1)
+Receiving objects: 100% (16/16), done.
+Resolving deltas: 100% (3/3), done.
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4
+$ cd hello-world-java
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/hello-world-java (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   HelloWorld.java
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/hello-world-java (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   HelloWorld.java
+        modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/hello-world-java (master)
+$ git add --all
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/hello-world-java (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   HelloWorld.java
+        modified:   README.md
+
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/hello-world-java (master)
+$ git commit -m "updated helloworld java files"
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'HP@DESKTOP-3GU6R56.(none)')
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/hello-world-java (master)
+$ git config --global user.email "srinfotechbatch4@gmail.com"
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/hello-world-java (master)
+$ git config --global user.name "srinfotechbatch4"
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/hello-world-java (master)
+$ git commit -m "updated helloworld java files"
+[master 657da56] updated helloworld java files
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/hello-world-java (master)
+$ git push
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 428 bytes | 214.00 KiB/s, done.
+Total 4 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To github.com:srinfotechbatch4/hello-world-java.git
+   4947e1e..657da56  master -> master
+
+
+
+
+   <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/f8de6bc5-3b66-4584-ae2f-832200c557c8" />
