@@ -443,3 +443,383 @@ To github.com:srinfotechbatch4/hello-world-java.git
 
 
    <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/f8de6bc5-3b66-4584-ae2f-832200c557c8" />
+
+
+
+
+
+
+09/10/2025::
+=============
+
+
+Github Branching Model::
+=======================
+
+A GitHub branching model is a structured way of organizing branches in a Git repository to manage development workflows effectively. It helps teams work collaboratively, isolate features, manage releases, and deploy code more efficiently.
+
+
+<img width="1798" height="749" alt="image" src="https://github.com/user-attachments/assets/8965c1f6-c445-4909-8998-50cd188c211b" />
+
+
+<img width="1483" height="751" alt="image" src="https://github.com/user-attachments/assets/a7975faa-5e61-460d-a2d3-d145d5211d31" />
+
+
+
+Sample Repository Hello-World Project::
+=========================================
+
+https://github.com/srinfotechbatch4/srinfotechbatch4demo.git
+
+Branches:
+==========
+main (or master): Always production-ready.
+
+feature/*: Used for new features.
+
+release/*: Prepares for a new production release.
+
+main or master branch:: This is default branch and whenever we created the empty Repository by defauly main or master branche is created automatically.
+main or master branch always stable and live code 
+
+feature branch:: It could be a new feature, an improvement of existing features, bug fixes, or any other changes. A feature branch is a type of branch in Git typically used to develop new features for the software.feature branch will created from main or master OR feature branch created from latest release branch always based on the release cycle
+
+formate:: feature/YYYY.MM.DD
+ feature/2025.06.22
+
+release branch:: Based on the release we have created release branch accourdingly and starts the next release cycle.
+always release branch created from master only and master have stable and live code and post release we shold merged code changes to master branch only
+
+release/2025.07.20
+
+hotfix branch:: always created from main or master branch only for production fixes.once production fix done we should merged directly to main or master branch only.
+
+always created this hotfix branch for production issues fixes
+
+bugfix:: this branch is created from release branch to fix the LLE(lower level environemnt)/Pre-Prod/UAT/Non-Prod issues and once LLE issues fixed ,we should pushed their changes to release branch only.
+
+
+Raise PR (Pull Request) ::
+=========================
+
+Merge the code from one branch to another branch that is called pull request
+
+below are the steps to raise PR::
+
+Go to -->Pull requests and click
+
+![image](https://github.com/user-attachments/assets/f2848a77-e095-4f56-917c-af9105d1e0bb)
+
+Click New Pull Request::
+
+![image](https://github.com/user-attachments/assets/1369f202-d7fd-4279-ac9d-b4b2eb7702ed)
+
+Compare & pull Request
+
+![image](https://github.com/user-attachments/assets/bac984dd-12b1-4cf0-b00d-e5b49db165f6)
+
+select base & compare options
+
+![image](https://github.com/user-attachments/assets/13e46ee9-db46-4eb0-a505-e4580e4a92ff)
+
+
+Raise PR(Pull Request) from feature to release branch
+
+
+![image](https://github.com/user-attachments/assets/e4e939a3-a286-4264-a51d-3c1c7df59be4)
+
+
+please select base & compare branches so here base branch is release/2025.06.29 and compare branch is feature/2025.06.22
+
+i'm going to merge code changes from feature branch to release branch 
+
+
+
+![image](https://github.com/user-attachments/assets/15c01632-b97a-4ede-bb55-2ef0bcea5105)
+
+
+click create pull request
+
+![image](https://github.com/user-attachments/assets/6b91e62d-9aee-4328-b759-bd20ec6f2a1d)
+
+![image](https://github.com/user-attachments/assets/60876946-a09b-4245-bc4b-835bff15fe87)
+
+click merge request
+
+confirm merge
+
+![image](https://github.com/user-attachments/assets/3ae9c358-accc-4a73-92c5-4aa21b2d78c4)
+
+
+merged 1 commit into release/2025.06.29 from feature/2025.06.22  Copied!
+
+![image](https://github.com/user-attachments/assets/fc0f68b5-b263-4267-ad07-0ea7a2bcf026)
+
+
+
+Session Note::
+================
+
+>git checkout <branchname>
+
+>git checkout 
+
+
+2.github model  ---->master-->feature--->release
+
+git flow model --->master-->develop-->feature--->release
+
+
+>git pull    ---->pull the changes from remote to local machine
+
+=============
+
+Lab Practice::
+============
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4
+$ git clone git@github.com:srinfotechbatch4/srinfotechbatch4demo.git
+
+Cloning into 'srinfotechbatch4demo'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+Receiving objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4
+$
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4
+
+$ cd srinfotechbatch4demo
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/srinfotechbatch4demo (master)
+$ git checkout feature/2025.10.12
+branch 'feature/2025.10.12' set up to track 'origin/feature/2025.10.12'.
+Switched to a new branch 'feature/2025.10.12'
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/srinfotechbatch4demo (feature/2025.10.12)
+
+$ git status
+On branch feature/2025.10.12
+Your branch is up to date with 'origin/feature/2025.10.12'.
+
+nothing to commit, working tree clean
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/srinfotechbatch4demo (feature/2025.10.12)
+
+$ git status
+
+On branch feature/2025.10.12
+Your branch is up to date with 'origin/feature/2025.10.12'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+        submit new user.java
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/srinfotechbatch4demo (feature/2025.10.12)
+
+$ git add --all
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/srinfotechbatch4demo (feature/2025.10.12)
+
+$ git status
+
+On branch feature/2025.10.12
+
+Your branch is up to date with 'origin/feature/2025.10.12'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   .gitignore
+        modified:   README.md
+        new file:   submit new user.java
+
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/srinfotechbatch4demo (feature/2025.10.12)
+$ git commit -m "i have added new user submit functinality"
+[feature/2025.10.12 3e4a24b] i have added new user submit functinality
+ 3 files changed, 41 insertions(+), 1 deletion(-)
+ create mode 100644 .gitignore
+ create mode 100644 submit new user.java
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/srinfotechbatch4demo (feature/2025.10.12)
+
+$ git push
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (5/5), 781 bytes | 195.00 KiB/s, done.
+Total 5 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To github.com:srinfotechbatch4/srinfotechbatch4demo.git
+   1c55b10..3e4a24b  feature/2025.10.12 -> feature/2025.10.12
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/srinfotechbatch4demo (feature/2025.10.12)
+
+$ git status
+
+On branch feature/2025.10.12
+Your branch is up to date with 'origin/feature/2025.10.12'.
+
+nothing to commit, working tree clean
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/srinfotechbatch4demo (feature/2025.10.12)
+
+$ git checkout bugfix/2025.10.12
+
+error: pathspec 'bugfix/2025.10.12' did not match any file(s) known to git
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/srinfotechbatch4demo (feature/2025.10.12)
+
+$ git checkout bugfix/2025.10.12
+
+error: pathspec 'bugfix/2025.10.12' did not match any file(s) known to git
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/srinfotechbatch4demo (feature/2025.10.12)
+
+$ git pull
+
+remote: Enumerating objects: 2, done.
+remote: Counting objects: 100% (2/2), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 2 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (2/2), 1.75 KiB | 112.00 KiB/s, done.
+From github.com:srinfotechbatch4/srinfotechbatch4demo
+ * [new branch]      bugfix/2025.10.12  -> origin/bugfix/2025.10.12
+   1c55b10..fb0e3f6  master             -> origin/master
+ * [new branch]      release/2025.10.12 -> origin/release/2025.10.12
+Already up to date.
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/srinfotechbatch4demo (feature/2025.10.12)
+
+$ git checkout bugfix/2025.10.12
+
+branch 'bugfix/2025.10.12' set up to track 'origin/bugfix/2025.10.12'.
+Switched to a new branch 'bugfix/2025.10.12'
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/srinfotechbatch4demo (bugfix/2025.10.12)
+
+$ git status
+
+On branch bugfix/2025.10.12
+Your branch is up to date with 'origin/bugfix/2025.10.12'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   submit new user.java
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/srinfotechbatch4demo (bugfix/2025.10.12)
+
+$ git add --all
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/srinfotechbatch4demo (bugfix/2025.10.12)
+
+$ git status
+
+On branch bugfix/2025.10.12
+Your branch is up to date with 'origin/bugfix/2025.10.12'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   submit new user.java
+
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/srinfotechbatch4demo (bugfix/2025.10.12)
+
+$ git commit -m "added new user class"
+
+[bugfix/2025.10.12 61c1366] added new user class
+ 1 file changed, 7 insertions(+)
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/srinfotechbatch4demo (bugfix/2025.10.12)
+
+$ git push
+
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 375 bytes | 187.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:srinfotechbatch4/srinfotechbatch4demo.git
+   3e4a24b..61c1366  bugfix/2025.10.12 -> bugfix/2025.10.12
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/srinfotechbatch4demo (bugfix/2025.10.12)
+
+$ git checkout hotfix/2025.10.12
+
+error: pathspec 'hotfix/2025.10.12' did not match any file(s) known to git
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/srinfotechbatch4demo (bugfix/2025.10.12)
+
+$ git pull
+
+remote: Enumerating objects: 1, done.
+remote: Counting objects: 100% (1/1), done.
+remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (1/1), 902 bytes | 112.00 KiB/s, done.
+From github.com:srinfotechbatch4/srinfotechbatch4demo
+   3e4a24b..2984d57  feature/2025.10.12 -> origin/feature/2025.10.12
+ * [new branch]      hotfix/2025.10.12  -> origin/hotfix/2025.10.12
+Already up to date.
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/srinfotechbatch4demo (bugfix/2025.10.12)
+
+$ git checkout hotfix/2025.10.12
+
+branch 'hotfix/2025.10.12' set up to track 'origin/hotfix/2025.10.12'.
+Switched to a new branch 'hotfix/2025.10.12'
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/srinfotechbatch4demo (hotfix/2025.10.12)
+
+$ git status
+
+On branch hotfix/2025.10.12
+Your branch is up to date with 'origin/hotfix/2025.10.12'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   submit new user.java
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/srinfotechbatch4demo (hotfix/2025.10.12)
+
+$ git add --all
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/srinfotechbatch4demo (hotfix/2025.10.12)
+
+$ git commit -m "added srinfotech user"
+
+[hotfix/2025.10.12 9a2194d] added srinfotech user
+ 1 file changed, 11 insertions(+)
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/srinfotechbatch4demo (hotfix/2025.10.12)
+
+$ git push
+
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 375 bytes | 187.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:srinfotechbatch4/srinfotechbatch4demo.git
+   eeccc6a..9a2194d  hotfix/2025.10.12 -> hotfix/2025.10.12
+
+   
