@@ -1192,3 +1192,31 @@ git fetch--->just fetch
 git pull -->fetch+merged
 
 
+
+Session Note::
+==================
+
+>git pull    ---->pull the changes from remote to local machine
+
+if you faces any conflicts issues during the code changes push from local to remote, 
+
+we need to follow the below steps to resove the conflicts
+
+1.press the i from your keyboard
+
+2.press the esc from your keyboard
+
+3.swift+: from your keyboard
+
+4.wq
+
+5.press enter
+
+to avoide the conflicts please make sure should perform >git pull 
+
+
+1.git push   ---->local to remote
+
+2.git pull   -->fetch the details + merged the changes
+
+3.git fetch  --->just the details
