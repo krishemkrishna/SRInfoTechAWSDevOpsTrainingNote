@@ -822,4 +822,373 @@ remote: Resolving deltas: 100% (1/1), completed with 1 local object.
 To github.com:srinfotechbatch4/srinfotechbatch4demo.git
    eeccc6a..9a2194d  hotfix/2025.10.12 -> hotfix/2025.10.12
 
+
+
+
    
+10/10/2025::
+===========
+
+Avoide conflicts in RealTime Scenarious::
+=============================================
+
+
+If multiple developers OR DevOps Engineers are working on same Project/MOdules, if they tried to commits thier code changes to Repository, it will faces the conflicts issues and how to resolved those conflicts issues in real time projects
+
+
+<img width="1827" height="647" alt="image" src="https://github.com/user-attachments/assets/f1bcdc84-5d1b-42a0-b00e-559d85eead6a" />
+
+
+git pull::
+============
+
+git pull command is use, copies changes from a remote repository directly into your working directory (local directory) and merged code changes from remote repository to local repository 
+
+git fetch::
+=============
+
+The git fetch command only fetch the changes into your local Git repo and it will not merged anything. just fetch the details
+
+Please create developer1,developer2,developer3 directories in your local machine and clone the project code separately
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d4bedee0-2e25-469d-b04a-ba3241cd5869" />
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/0d77ddf9-1fd3-4ebe-b021-3aea557e2cf8" />
+
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/82e5f642-f316-41d0-9efa-0525a3788953" />
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/Developer2/DevTeamAviodConflicts (feature/2025.10.10)
+$ git push
+To github.com:srinfotechbatch4/DevTeamAviodConflicts.git
+ ! [rejected]        feature/2025.10.10 -> feature/2025.10.10 (fetch first)
+error: failed to push some refs to 'github.com:srinfotechbatch4/DevTeamAviodConflicts.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+
+resolved conflicts::
+==========================
+
+>git pull
+
+opend the editor
+
+1.presh the i from your keyboard
+
+2.esc
+
+3.swift+:
+
+4.wq
+
+5.enter
+
+
+
+Developer1 Activity::
+=====================
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/Developer1
+$ git clone git@github.com:srinfotechbatch4/DevTeamAviodConflicts.git\
+>
+Cloning into 'DevTeamAviodConflicts'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (3/3), done.
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/Developer1
+$ cd DevTeamAviodConflicts/
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/Developer1/DevTeamAviodConflicts (main)
+$ git checkout feature/2025.10.10
+branch 'feature/2025.10.10' set up to track 'origin/feature/2025.10.10'.
+Switched to a new branch 'feature/2025.10.10'
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/Developer1/DevTeamAviodConflicts (feature/2025.10.10)
+$ git status
+On branch feature/2025.10.10
+Your branch is up to date with 'origin/feature/2025.10.10'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        hello-world-java-master/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/Developer1/DevTeamAviodConflicts (feature/2025.10.10)
+$ git add --all
+warning: in the working copy of 'hello-world-java-master/.gitignore', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'hello-world-java-master/HelloWorld.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'hello-world-java-master/README.md', LF will be replaced by CRLF the next time Git touches it
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/Developer1/DevTeamAviodConflicts (feature/2025.10.10)
+$ git status
+On branch feature/2025.10.10
+Your branch is up to date with 'origin/feature/2025.10.10'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   hello-world-java-master/.gitignore
+        new file:   hello-world-java-master/HelloWorld.java
+        new file:   hello-world-java-master/README.md
+
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/Developer1/DevTeamAviodConflicts (feature/2025.10.10)
+$ git commit -m "updated the developer1 activity"
+[feature/2025.10.10 8c63975] updated the developer1 activity
+ 3 files changed, 47 insertions(+)
+ create mode 100644 hello-world-java-master/.gitignore
+ create mode 100644 hello-world-java-master/HelloWorld.java
+ create mode 100644 hello-world-java-master/README.md
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/Developer1/DevTeamAviodConflicts (feature/2025.10.10)
+$ git push
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (6/6), 890 bytes | 296.00 KiB/s, done.
+Total 6 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To github.com:srinfotechbatch4/DevTeamAviodConflicts.git
+   9964975..8c63975  feature/2025.10.10 -> feature/2025.10.10
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/Developer1/DevTeamAviodConflicts (feature/2025.10.10)
+$ git fetch
+remote: Enumerating objects: 16, done.
+remote: Counting objects: 100% (16/16), done.
+remote: Compressing objects: 100% (9/9), done.
+remote: Total 12 (delta 6), reused 7 (delta 3), pack-reused 0 (from 0)
+Unpacking objects: 100% (12/12), 1.93 KiB | 17.00 KiB/s, done.
+From github.com:srinfotechbatch4/DevTeamAviodConflicts
+   8c63975..1a00b3d  feature/2025.10.10 -> origin/feature/2025.10.10
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/Developer1/DevTeamAviodConflicts (feature/2025.10.10)
+$ git pull
+Updating 8c63975..1a00b3d
+Fast-forward
+ .gitignore                              |  2 ++
+ HelloWorld.java                         | 11 +++++++++++
+ README.md                               | 35 ++++++++++++++++++++++++++++++++-
+ hello-world-java-master/HelloWorld.java |  6 ++++++
+ 4 files changed, 53 insertions(+), 1 deletion(-)
+ create mode 100644 .gitignore
+ create mode 100644 HelloWorld.java
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/Developer1/DevTeamAviodConflicts (feature/2025.10.10)
+$ git add --all
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/Developer1/DevTeamAviodConflicts (feature/2025.10.10)
+$ git pull
+Already up to date.
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/Developer1/DevTeamAviodConflicts (feature/2025.10.10)
+$ git commit -m "updated the developer1 activity"
+[feature/2025.10.10 e94720a] updated the developer1 activity
+ 1 file changed, 7 insertions(+)
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/Developer1/DevTeamAviodConflicts (feature/2025.10.10)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 299 bytes | 99.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To github.com:srinfotechbatch4/DevTeamAviodConflicts.git
+   1a00b3d..e94720a  feature/2025.10.10 -> feature/2025.10.10
+
+
+
+Developer2 Activity::
+====================
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/Developer2
+$ git clone git@github.com:srinfotechbatch4/DevTeamAviodConflicts.git
+Cloning into 'DevTeamAviodConflicts'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (3/3), done.
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/Developer2
+$ cd DevTeamAviodConflicts/
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/Developer2/DevTeamAviodConflicts (main)
+$ git checkout feature/2025.10.10
+branch 'feature/2025.10.10' set up to track 'origin/feature/2025.10.10'.
+Switched to a new branch 'feature/2025.10.10'
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/Developer2/DevTeamAviodConflicts (feature/2025.10.10)
+$ git status
+On branch feature/2025.10.10
+Your branch is up to date with 'origin/feature/2025.10.10'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+        HelloWorld.java
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/Developer2/DevTeamAviodConflicts (feature/2025.10.10)
+$ git add --all
+Merge branch 'feature/2025.10.10' of github.com:srinfotechbatch4/DevTeamAviodConflicts into feature/2025.10.10
+
+remote: Enumerating objects: 7, done.
+remote: Counting objects: 100% (7/7), done.
+remote: Compressing objects: 100% (5/5), done.
+remote: Total 6 (delta 0), reused 6 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (6/6), 870 bytes | 18.00 KiB/s, done.
+From github.com:srinfotechbatch4/DevTeamAviodConflicts
+   9964975..8c63975  feature/2025.10.10 -> origin/feature/2025.10.10
+Merge made by the 'ort' strategy.
+ hello-world-java-master/.gitignore      |  2 ++
+ hello-world-java-master/HelloWorld.java | 11 +++++++++++
+ hello-world-java-master/README.md       | 34 +++++++++++++++++++++++++++++++++
+ 3 files changed, 47 insertions(+)
+ create mode 100644 hello-world-java-master/.gitignore
+ create mode 100644 hello-world-java-master/HelloWorld.java
+ create mode 100644 hello-world-java-master/README.md
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/Developer2/DevTeamAviodConflicts (feature/2025.10.10)
+$ git push
+Enumerating objects: 11, done.
+Counting objects: 100% (10/10), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (7/7), 1.06 KiB | 270.00 KiB/s, done.
+Total 7 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), done.
+To github.com:srinfotechbatch4/DevTeamAviodConflicts.git
+   8c63975..5cfcaf7  feature/2025.10.10 -> feature/2025.10.10
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/Developer2/DevTeamAviodConflicts (feature/2025.10.10)
+$ git add --all
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/Developer2/DevTeamAviodConflicts (feature/2025.10.10)
+$ git commit -m "updated the developer2 activity"
+[feature/2025.10.10 ac8d4fa] updated the developer2 activity
+ 1 file changed, 2 insertions(+)
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/Developer2/DevTeamAviodConflicts (feature/2025.10.10)
+$ git push
+To github.com:srinfotechbatch4/DevTeamAviodConflicts.git
+ ! [rejected]        feature/2025.10.10 -> feature/2025.10.10 (fetch first)
+error: failed to push some refs to 'github.com:srinfotechbatch4/DevTeamAviodConflicts.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/Developer2/DevTeamAviodConflicts (feature/2025.10.10)
+$
+
+
+Developer3 Activity::
+=====================
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/Developer3
+$ git clone git@github.com:srinfotechbatch4/DevTeamAviodConflicts.git
+Cloning into 'DevTeamAviodConflicts'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (3/3), done.
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/Developer3
+$ cd DevTeamAviodConflicts/
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/Developer3/DevTeamAviodConflicts (main)
+$ git checkout feature/2025.10.10
+branch 'feature/2025.10.10' set up to track 'origin/feature/2025.10.10'.
+Switched to a new branch 'feature/2025.10.10'
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/Developer3/DevTeamAviodConflicts (feature/2025.10.10)
+$ git pull
+remote: Enumerating objects: 13, done.
+remote: Counting objects: 100% (13/13), done.
+remote: Compressing objects: 100% (9/9), done.
+remote: Total 11 (delta 3), reused 9 (delta 1), pack-reused 0 (from 0)
+Unpacking objects: 100% (11/11), 1.40 KiB | 11.00 KiB/s, done.
+From github.com:srinfotechbatch4/DevTeamAviodConflicts
+   9964975..5cfcaf7  feature/2025.10.10 -> origin/feature/2025.10.10
+Updating 9964975..5cfcaf7
+Fast-forward
+ .gitignore                              |  2 ++
+ HelloWorld.java                         |  5 +++++
+ README.md                               | 35 ++++++++++++++++++++++++++++++++-
+ hello-world-java-master/.gitignore      |  2 ++
+ hello-world-java-master/HelloWorld.java | 11 +++++++++++
+ hello-world-java-master/README.md       | 34 ++++++++++++++++++++++++++++++++
+ 6 files changed, 88 insertions(+), 1 deletion(-)
+ create mode 100644 .gitignore
+ create mode 100644 HelloWorld.java
+ create mode 100644 hello-world-java-master/.gitignore
+ create mode 100644 hello-world-java-master/HelloWorld.java
+ create mode 100644 hello-world-java-master/README.md
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/Developer3/DevTeamAviodConflicts (feature/2025.10.10)
+$ git status
+On branch feature/2025.10.10
+Your branch is up to date with 'origin/feature/2025.10.10'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   hello-world-java-master/HelloWorld.java
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/Developer3/DevTeamAviodConflicts (feature/2025.10.10)
+$ git add --all
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/Developer3/DevTeamAviodConflicts (feature/2025.10.10)
+$ git status
+On branch feature/2025.10.10
+Your branch is up to date with 'origin/feature/2025.10.10'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   hello-world-java-master/HelloWorld.java
+
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/Developer3/DevTeamAviodConflicts (feature/2025.10.10)
+$ git commit -m "updated the developer3 activity"
+[feature/2025.10.10 53d723c] updated the developer3 activity
+ 1 file changed, 6 insertions(+)
+
+HP@DESKTOP-3GU6R56 MINGW64 ~/Documents/Batch4/Developer3/DevTeamAviodConflicts (feature/2025.10.10)
+$ git push
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 435 bytes | 217.00 KiB/s, done.
+Total 4 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To github.com:srinfotechbatch4/DevTeamAviodConflicts.git
+   5cfcaf7..53d723c  feature/2025.10.10 -> feature/2025.10.10
+
+
+
+Please be practice above 3 developers activity in real time bases
+
+git fetch--->just fetch
+
+git pull -->fetch+merged
+
+
