@@ -1220,3 +1220,153 @@ to avoide the conflicts please make sure should perform >git pull
 2.git pull   -->fetch the details + merged the changes
 
 3.git fetch  --->just the details
+
+
+
+
+
+
+13/10/2025::
+=============
+
+
+Git All the Commands::
+==========================
+
+Git commands::
+==============
+
+
+1. git clone git@github.com:srinfotechbatch4/srinfotechbatch4demo.git
+
+2.cd srinfotechbatch4demo
+
+3.git checkout feature/2025.10.10
+
+4.git status
+
+after modified the some files
+
+5.git status
+
+6.git add --all  OR git add <give specific filename>
+
+7. git commit -m "message"
+
+8. git push 
+
+9.git pull
+
+10. git fetch
+
+11.git checkout -b feature/2025.10.13
+
+
+clone      Clone a repository into a new directory
+
+add        Add files
+
+status     Show the working tree status
+
+commit     Record changes to the repository
+
+ pull       Fetch from and integrate with another repository or a local branch
+ 
+ push       Update remote refs along with associated objects
+
+
+ 1.install git
+
+2.introcuction about git-->VCS
+
+3.github-->SCM
+
+4.introduction about github
+
+5.github account
+
+6.create repositories
+
+7.integarte git & github via SSH keys--->ssh-keygen -t ed25519
+
+8.how to created branch in github
+
+9.how to rasie PR-->pull requests--->feature branch to release
+
+10.git commands::
+
+1.git clone
+
+2.cd 
+
+3.git checkout 
+
+4.git status
+
+5.git add -all
+
+6.git commit
+
+7.git push
+
+8.git pull
+
+9.git fetch
+
+10.>git pull
+
+opend the editor
+
+1.presh the i from your keyboard
+
+2.esc
+
+3.swift+:
+
+4.wq
+
+5.enter
+
+10.how to resolved the git conflicts
+
+11.github branching model/stargety
+
+12.end to end flow of git & github
+
+
+Jenkins Introductiion::
+============================
+
+
+is a free and open source automation server/tool. It helps automate the parts of software development related to building, testing, and deploying, facilitating continuous integration and continuous delivery.
+
+Jenkins is a Orchestration tool
+
+Jenkins is a CI/CD tool
+
+Jenkins is a Schedular
+
+Jenkins is a crone job schedular
+
+
+<img width="1516" height="727" alt="image" src="https://github.com/user-attachments/assets/634d9a74-58fa-4fa0-9b21-abad792f482f" />
+
+
+
+Roles And Responsibilities::
+================================
+
+
+1)The devops engineer was responsibility to release the product to the market as soon as possible 
+
+2)release the product speed to the market 
+
+3)Devops engineer was give continues feedback to the developers 4) Devops engineer responsibility start from git and end with production
+
+A) when your activity start from git and end with production environment(production servers)Continues deployment 
+
+when your activity start from git to LLE(lower level environment,testing environment,pre-prod…et) environment(pre-production servers)Continues delivery non-production environment
+
+Tutorials::
+
+https://www.tutorialspoint.com/jenkins/jenkins_overview.htm https://www.geeksforgeeks.org/jenkins-tutorial/#prerequisites
