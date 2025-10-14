@@ -1338,7 +1338,7 @@ Jenkins Introductiion::
 ============================
 
 
-is a free and open source automation server/tool. It helps automate the parts of software development related to building, testing, and deploying, facilitating continuous integration and continuous delivery.
+Jenkins is a free and open source automation server/tool. It helps automate the parts of software development related to building, testing, and deploying, facilitating continuous integration and continuous delivery.
 
 Jenkins is a Orchestration tool
 
