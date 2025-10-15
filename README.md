@@ -1510,3 +1510,65 @@ Common Maven Commands OR Maven Goals::
   
 6) mvn deploy	-------------> Deploys package to a remote repository.
 
+
+
+Installed jenkins in Windows::
+================================
+
+Please follow the below link steps to installed jenkins in your windows machines
+
+https://www.jenkins.io/doc/book/installing/war-file/
+
+
+https://www.jenkins.io/download/
+
+Go to google search -->download jenkins war file for windows
+
+click below Jenkins version
+
+Download Jenkins 2.515 for:
+
+![image](https://github.com/user-attachments/assets/eaac3392-c1ce-498f-8a85-7a5fecabeb6b)
+
+Jenkins.war file is downloaded
+
+![image](https://github.com/user-attachments/assets/70e676a4-9a05-4748-b8d5-2373bf8ac189)
+
+
+Steps::
+
+https://www.jenkins.io/download/
+
+1. First download the jenkins.war file and right click -->open gitbash here
+   
+
+ ![image](https://github.com/user-attachments/assets/77ca0550-974b-463f-953a-d81c9603d69a)
+
+  
+2. run the command  -->java -jar jenkins.war --httpPort=9090
+
+![image](https://github.com/user-attachments/assets/93cc2393-8a20-485f-ab8c-23451a64ccd3)
+
+![image](https://github.com/user-attachments/assets/75e03c2f-0ccf-4da0-90cf-d92de22903c3)
+
+we can see Jenkins is fully up and running
+
+![image](https://github.com/user-attachments/assets/b0e26f12-f202-4e69-8672-223e6947d379)
+
+
+Browse to http://localhost:9090 and wait until the Unlock Jenkins page appears
+
+Installed the default suggested plugins
+
+![image](https://github.com/user-attachments/assets/081c44fc-a6a3-46fa-82e3-7b34c2dc2dd6)
+
+click on continue 
+
+Need to create jenkins user profile 
+
+USER Name--->admin (any name you can provide)
+
+PASSWORD  -->admin  (any password as your wish but make sure you should remembered the these credentials)
+
+![image](https://github.com/user-attachments/assets/f0458a88-da81-4d32-9f87-42458fd214a1)
+
