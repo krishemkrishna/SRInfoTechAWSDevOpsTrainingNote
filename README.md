@@ -1370,3 +1370,143 @@ when your activity start from git to LLE(lower level environment,testing environ
 Tutorials::
 
 https://www.tutorialspoint.com/jenkins/jenkins_overview.htm https://www.geeksforgeeks.org/jenkins-tutorial/#prerequisites
+
+
+
+
+
+14/10/2025::
+============
+
+
+Download JDK 17 ::
+
+https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html
+
+Windows x64 Installer 153.92 MB
+
+Windows x64 Compressed Archive	172.87 MB	
+https://download.oracle.com/java/17/archive/jdk-17.0.12_windows-x64_bin.zip (sha256 )
+
+JDK 17 Environment setup::
+==============================
+
+Go to Search box & type Edit the system environemnt variables and click
+
+It will navigate to System properties
+
+![image](https://github.com/user-attachments/assets/2de9b257-9029-43f7-af30-4f4f4827731a)
+
+Click Environment Variables
+
+
+![image](https://github.com/user-attachments/assets/0b02d209-cb85-4afd-869f-923df054b7de)
+
+![image](https://github.com/user-attachments/assets/88adc878-dedd-4150-9ee8-f01c75677ab2)
+
+User variables::
+================
+
+![image](https://github.com/user-attachments/assets/d6bfe193-6a5c-4a8b-a21a-fa77c07a4bbc)
+
+Click New
+
+Variable Name:: JAVA_HOME
+
+Variable Value:: C:\Users\HP\Downloads\jdk-17.0.12_windows-x64_bin\jdk-17.0.12
+
+![image](https://github.com/user-attachments/assets/5743966a-8e88-4502-bd3a-904f1a839a01)
+
+Click OK
+
+![image](https://github.com/user-attachments/assets/1af67329-3601-4e23-855e-b69cf5763d95)
+
+
+System variable::
+=================
+
+![image](https://github.com/user-attachments/assets/0cecde24-19be-4989-98c5-c3eb9c20734c)
+
+Edit Path
+
+![image](https://github.com/user-attachments/assets/5f302184-84cb-4e66-b17a-3ce4792fa45c)
+
+Click New and give Java Installed path till \bin
+
+C:\Users\HP\Downloads\jdk-17.0.12_windows-x64_bin\jdk-17.0.12\bin
+
+![image](https://github.com/user-attachments/assets/d918df00-9c10-424f-b155-7a22e925d291)
+
+Click OK
+
+You Can verify Java is Installed Or Not
+
+Go to command Prompt
+
+![image](https://github.com/user-attachments/assets/773f6318-d8a5-4d2c-803b-e504d84e24e1)
+
+![image](https://github.com/user-attachments/assets/aee76eab-4f27-4fce-af69-f28a872d37dc)
+
+
+>java --version
+
+C:\Users\HP>java --version
+java 17.0.12 2024-07-16 LTS
+Java(TM) SE Runtime Environment (build 17.0.12+8-LTS-286)
+Java HotSpot(TM) 64-Bit Server VM (build 17.0.12+8-LTS-286, mixed mode, sharing)
+
+![image](https://github.com/user-attachments/assets/92e49e72-2f7c-464c-b8f1-2a30e6ebe702)
+
+Above Screeenshot JDK17 setup is done
+
+
+
+
+Installed jenkins in Windows::
+================================
+
+https://www.jenkins.io/download/
+
+Go to google search -->download jenkins war file for windows
+
+click below Jenkins version
+
+Download Jenkins 2.515 for:
+
+![image](https://github.com/user-attachments/assets/eaac3392-c1ce-498f-8a85-7a5fecabeb6b)
+
+Jenkins.war file is downloaded
+
+![image](https://github.com/user-attachments/assets/70e676a4-9a05-4748-b8d5-2373bf8ac189)
+
+
+
+MAven Environment setup::
+==============================
+
+Maven::
+=========
+
+Maven is a powerful build automation tool used primarily for Java projects. Developed by the Apache.
+
+it helps developers manage a project's build, dependencies, documentation, and more—all using a single configuration file called pom.xml
+
+![image](https://github.com/user-attachments/assets/7455b09b-d334-4974-84da-60c76c45cdc0)
+
+
+Common Maven Commands OR Maven Goals::
+======================================
+
+
+1) mvn clean	  ------------> Deletes target/ directory (clean build).
+
+2) mvn compile	-----------> Compiles the source code.
+   
+3) mvn test	   ------------> Runs tests.
+   
+4) mvn package	------------> Creates a JAR/WAR.
+  
+5) mvn install	------------> Installs package into your local repository.
+  
+6) mvn deploy	-------------> Deploys package to a remote repository.
+
