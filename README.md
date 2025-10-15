@@ -1570,5 +1570,8 @@ USER Name--->admin (any name you can provide)
 
 PASSWORD  -->admin  (any password as your wish but make sure you should remembered the these credentials)
 
-![image](https://github.com/user-attachments/assets/f0458a88-da81-4d32-9f87-42458fd214a1)
+Jenkins Dashboard
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/149d77a4-9f16-434a-8b07-cab848ea574e" />
+
 
