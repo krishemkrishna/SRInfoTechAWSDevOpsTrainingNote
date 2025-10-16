@@ -1575,3 +1575,208 @@ Jenkins Dashboard
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/149d77a4-9f16-434a-8b07-cab848ea574e" />
 
 
+
+
+15/10/2025::
+==============
+
+
+Maven Download link
+
+https://maven.apache.org/download.cgi
+
+Please download below zip file
+
+Binary zip archive	apache-maven-3.9.10-bin.zip
+
+![image](https://github.com/user-attachments/assets/819bec59-4a6d-4eca-a0da-dffe83019b34)
+
+Downloaded Zip file
+
+![image](https://github.com/user-attachments/assets/e719ecd4-e291-4e4e-a8d7-f4f947b2723c)
+
+Please extract the file
+
+![image](https://github.com/user-attachments/assets/b12246c2-8695-4494-a801-837540cf1bc2)
+
+
+Go to Search box & type Edit the system environemnt variables and click
+
+It will navigate to System properties
+
+![image](https://github.com/user-attachments/assets/2de9b257-9029-43f7-af30-4f4f4827731a)
+
+Click Environment Variables
+
+
+![image](https://github.com/user-attachments/assets/0b02d209-cb85-4afd-869f-923df054b7de)
+
+![image](https://github.com/user-attachments/assets/88adc878-dedd-4150-9ee8-f01c75677ab2)
+
+User variables::
+================
+
+![image](https://github.com/user-attachments/assets/d6bfe193-6a5c-4a8b-a21a-fa77c07a4bbc)
+
+Click New
+
+Variable Name:: MAVEN_HOME
+
+Variable Value:: C:\Users\HP\Downloads\apache-maven-3.9.10
+
+![image](https://github.com/user-attachments/assets/0f7829be-f1c7-4e96-b2ed-51aea69c0497)
+
+
+Click OK
+
+![image](https://github.com/user-attachments/assets/0c8f1a15-fc5f-4073-98f5-5416df90f071)
+
+
+
+System variable::
+=================
+
+![image](https://github.com/user-attachments/assets/0cecde24-19be-4989-98c5-c3eb9c20734c)
+
+Edit Path
+
+![image](https://githubmvn -v.com/user-attachments/assets/5f302184-84cb-4e66-b17a-3ce4792fa45c)
+
+Click New and give maven Installed path till \bin
+
+C:\Users\HP\Downloads\apache-maven-3.9.10\bin
+
+
+![image](https://github.com/user-attachments/assets/27d2d50a-845d-4c0f-9559-50e7779c08b2)
+
+
+Click OK
+
+![image](https://github.com/user-attachments/assets/7dd7e183-7d6d-424a-8b95-5b288e859af0)
+
+
+You Can verify maven is Installed Or Not
+
+
+Go to command Prompt
+
+![image](https://github.com/user-attachments/assets/bf6571b4-cd62-4899-969b-abaec6d0ef8c)
+
+>mvn -v
+
+![image](https://github.com/user-attachments/assets/93472b9c-b6b0-4bd4-acac-41d28e2031d9)
+
+C:\Users\HP>mvn -v
+
+
+Apache Maven 3.9.10 (5f519b97e944483d878815739f519b2eade0a91d)
+Maven home: C:\Users\HP\Downloads\apache-maven-3.9.10
+Java version: 17.0.12, vendor: Oracle Corporation, runtime: C:\Users\HP\Downloads\jdk-17.0.12_windows-x64_bin\jdk-17.0.12
+Default locale: en_IN, platform encoding: Cp1252
+OS name: "windows 10", version: "10.0", arch: "amd64", family: "windows"
+
+![image](https://github.com/user-attachments/assets/cc1d10c5-9c62-498f-9a58-b0f14e84438f)
+
+
+Above Screeenshot maven setup is done
+
+
+
+Steps::
+
+1.first we need to create New repository in Github
+
+2.please Clone the Empty Repositoy in your local system
+
+3.copy the Spring-petclinic project code to in your repository 
+
+4.once done we need to push project code to github repository 
+
+5. we need to integarte Github to Jenkins
+
+we need to create Sample demo Project in Jenkins
+
+Create sample Freestyle project::
+============================
+
+Click New Item
+
+![image](https://github.com/user-attachments/assets/d9e7f707-aa00-4c74-b9ca-30489ded6f55)
+
+
+Configuration stages::
+
+1.General
+
+2.Source code management (SCM)
+
+3.Triggres
+
+4.Environment
+
+5.Build Steps
+
+6.Post Build Actions
+
+
+![image](https://github.com/user-attachments/assets/b7b5caf1-3d81-4de0-aebc-c2dc5080f916)
+
+
+General Section provide the Project/job description 
+
+
+At SCM stage level select the Git and provide the github details
+
+Below url is spring-petclinic Project and everyone Should please Fork to your github account
+
+Github Project URL::
+=====================
+
+https://github.com/srinfotechbatch2/spring-petclinic
+
+
+https://github.com/srinfotechbatch2/spring-petclinic.git
+
+![image](https://github.com/user-attachments/assets/827c5b34-8a6e-41ad-b6e1-4899348730d6)
+
+Branches to build
+
+![image](https://github.com/user-attachments/assets/51cf678c-afbd-40bc-bbb5-fae55e4c5537)
+
+
+![image](https://github.com/user-attachments/assets/7bab6e2d-7868-460e-bd42-b2697195f3fe)
+
+Build steps::select the Invoke top-level Maven targets
+Goals section
+>mvn clean install
+
+Maven goals::
+
+>mvn test
+
+>mvn install
+
+
+>mvn clean install
+
+
+>mvn clean
+
+
+>mvn package
+
+![image](https://github.com/user-attachments/assets/53d49170-9dfe-4cad-abc0-50bf268e96c7)
+
+
+Job will be created
+
+Click Build Now
+
+
+Buils is Inprogress
+
+![image](https://github.com/user-attachments/assets/c6e399ce-ac52-47de-94a3-b4d6d156dce5)
+
+Success Builds
+
+![image](https://github.com/user-attachments/assets/df198c5f-ce69-45a8-a9e5-607ba2e39b34)
