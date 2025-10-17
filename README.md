@@ -1732,10 +1732,9 @@ Below url is spring-petclinic Project and everyone Should please Fork to your gi
 Github Project URL::
 =====================
 
-https://github.com/srinfotechbatch2/spring-petclinic
+https://github.com/srinfotechbatch4/spring-petclinic.git
 
-
-https://github.com/srinfotechbatch2/spring-petclinic.git
+https://github.com/srinfotechbatch4/onlinebookstore.git
 
 ![image](https://github.com/user-attachments/assets/827c5b34-8a6e-41ad-b6e1-4899348730d6)
 
@@ -1780,3 +1779,160 @@ Buils is Inprogress
 Success Builds
 
 ![image](https://github.com/user-attachments/assets/df198c5f-ce69-45a8-a9e5-607ba2e39b34)
+
+
+
+
+
+16/10/2025::
+==============
+
+
+Poll SCM ::
+=============
+
+Jenkins server ask git if there is any changes in git server or not, if changes there Jenkins server build/package the changes , every change build happened like 5 mints ,means every 5 minutes verify the Jenkins server to git if there is any changes 
+
+
+<img width="1663" height="684" alt="image" src="https://github.com/user-attachments/assets/4f831f81-ab6b-42b4-8e73-752076df2cbe" />
+
+
+POLL SCM ----* * * * * --every minute when every commit 
+
+Chrone JObs Formate LInk::
+=============================
+
+https://crontab.guru/examples.html
+
+
+Create one sample POLL SCM jenkins job::
+===========================================
+Go to jenkins Dashboard
+click New Item
+
+![image](https://github.com/user-attachments/assets/1c62657f-935b-4eed-b032-08842fb09a57)
+
+Description
+
+![image](https://github.com/user-attachments/assets/8385086f-ae72-4630-baa2-38e16e9866c2)
+
+
+
+Provide the Git URL
+
+Onlinebookstore Project::
+=========================
+
+https://github.com/srinfotechbatch4/onlinebookstore.git
+
+
+![image](https://github.com/user-attachments/assets/647ef983-c76e-4c48-b928-e43ab5d47570)
+
+
+
+Branch buiild
+
+![image](https://github.com/user-attachments/assets/cd011371-c6c5-40d6-a44a-b51186d0e3af)
+
+
+POLL SCM:: * * * * *
+
+every minute build was trigger when new commits happend in github repository
+
+
+![image](https://github.com/user-attachments/assets/899495ff-ce8c-4381-a012-5d058584809a)
+
+
+
+Build Steps::
+
+Select Invoke top-level Maven targets
+
+
+![image](https://github.com/user-attachments/assets/8a818614-ba02-45d5-a98d-8d94adbe68f7)
+
+![image](https://github.com/user-attachments/assets/20a1d9cd-1412-41fa-8f6e-62e94024f936)
+
+
+Once New Commits Happend in Github , Automatically Build is triggered in The Jenkins Server this Called CI (Continuous Integration)
+
+
+
+Check Your Workspace::
+========================== 
+
+once build success we can bale to see the /target folder under the Workspace
+
+
+![image](https://github.com/user-attachments/assets/d860064f-6f5f-4ef2-aa93-363bf45e47c5)
+
+
+1.To check a job's workspace:
+
+2.Navigate to the job in the Jenkins UI.
+
+3.Click on "Workspace" in the left sidebar.
+
+![image](https://github.com/user-attachments/assets/f5ab670a-e7aa-4372-bbea-c3a1c130fe3a)
+
+
+
+Under Target Folder we can able to see the all .ear/war/jar/zip Artifacts Formates
+
+
+![image](https://github.com/user-attachments/assets/369fe791-fb6e-4a59-8fb1-99a14df190c3)
+
+
+PLease try to execute the Project with below Maven Goals and see the difference 
+
+
+Common Maven Commands OR Maven Goals::
+======================================
+
+https://github.com/srinfotechbatch4/spring-petclinic.git
+
+https://github.com/srinfotechbatch4/onlinebookstore.git
+
+1) mvn clean	  ------------> Deletes target/ directory (clean build).
+
+2) mvn compile	-----------> Compiles the source code.
+   
+3) mvn test	   ------------> Runs tests.
+   
+4) mvn package	------------> Creates a JAR/WAR.
+  
+5) mvn install	------------> Installs package into your local repository.
+  
+6) mvn deploy	-------------> Deploys package to a remote repository.
+
+
+
+
+Execute the Jobs in Parallel::
+==============================
+
+
+1.By Default execute the Jenkins build jobs are sequence way,one by one 
+
+2.Don’t do 2 projects build parallel  this is real time scenario but we can do parallel builds as well one job
+
+Jenkins build parallel setup
+
+Go job ---> configure ----> Generall ---> Execute concurrent builds if necessary
+
+
+![image](https://github.com/user-attachments/assets/3216a68f-b10b-44cd-83b5-b62c27525296)
+
+
+![image](https://github.com/user-attachments/assets/909edd87-548d-4ded-a862-29cf850fac05)
+
+
+Here 5 builds execute parallel ,I kept executor is 5 this is same machine 
+
+![image](https://github.com/user-attachments/assets/a840a224-5cbb-43cc-92c1-d135db4ce00f)
+
+
+Build Periodically:::	H/15 * * * *   ----this build happened every 5 minutes without commits ,if changes are commit or not but every 5 mints build happened in Jenkins 
+
+
+
