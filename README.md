@@ -1929,7 +1929,7 @@ Go job ---> configure ----> Generall ---> Execute concurrent builds if necessary
 ![image](https://github.com/user-attachments/assets/909edd87-548d-4ded-a862-29cf850fac05)
 
 
-Here 5 builds execute parallel ,I kept executor is 10 this is same machine 
+Here 10 builds execute parallel ,I kept executor is 10 this is same machine 
 
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/bf2c18d8-3ab8-4f8d-b465-e7de1449d4a7" />
