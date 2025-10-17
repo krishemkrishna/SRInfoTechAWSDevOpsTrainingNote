@@ -1807,10 +1807,13 @@ https://crontab.guru/examples.html
 
 Create one sample POLL SCM jenkins job::
 ===========================================
+
 Go to jenkins Dashboard
+
 click New Item
 
-![image](https://github.com/user-attachments/assets/1c62657f-935b-4eed-b032-08842fb09a57)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/098730bb-4882-4e6e-9627-2670dbff097a" />
+
 
 Description
 
@@ -1851,7 +1854,6 @@ Select Invoke top-level Maven targets
 
 ![image](https://github.com/user-attachments/assets/8a818614-ba02-45d5-a98d-8d94adbe68f7)
 
-![image](https://github.com/user-attachments/assets/20a1d9cd-1412-41fa-8f6e-62e94024f936)
 
 
 Once New Commits Happend in Github , Automatically Build is triggered in The Jenkins Server this Called CI (Continuous Integration)
@@ -1927,12 +1929,13 @@ Go job ---> configure ----> Generall ---> Execute concurrent builds if necessary
 ![image](https://github.com/user-attachments/assets/909edd87-548d-4ded-a862-29cf850fac05)
 
 
-Here 5 builds execute parallel ,I kept executor is 5 this is same machine 
-
-![image](https://github.com/user-attachments/assets/a840a224-5cbb-43cc-92c1-d135db4ce00f)
+Here 5 builds execute parallel ,I kept executor is 10 this is same machine 
 
 
-Build Periodically:::	H/15 * * * *   ----this build happened every 5 minutes without commits ,if changes are commit or not but every 5 mints build happened in Jenkins 
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/bf2c18d8-3ab8-4f8d-b465-e7de1449d4a7" />
+
+
+
 
 
 
