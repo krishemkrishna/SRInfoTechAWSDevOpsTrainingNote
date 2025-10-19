@@ -1952,8 +1952,6 @@ Here 10 builds execute parallel ,I kept executor is 10 this is same machine
 ==============
 
 
-![image](https://github.com/user-attachments/assets/f204a3a2-d9ac-45fd-8497-e71d0c8bf82b)
-
 Poll SCM ::
 ================
 
@@ -1972,8 +1970,10 @@ H/15 * * * *   ----this build happened every 5 minutes without commits ,if chang
 
 Please create a New Jenkins jobs both POLL SCM & Build Periodically 
 
-https://github.com/srinfotechbatch2/spring-petclinic.git
-https://github.com/srinfotechbatch2/onlinebookstore.git
+https://github.com/srinfotechbatch4/spring-petclinic.git
+
+https://github.com/srinfotechbatch4/onlinebookstore.git
+
 
 Automatically Discard Old Builds:::
 ==============================
@@ -1995,51 +1995,46 @@ Save the configuration by clicking Save.
 
 
 
-Execute the Jobs in Parallel::
-==============================
-
-
-1.By Default execute the Jenkins build jobs are sequence way,one by one 
-
-2.Don’t do 2 projects build parallel  this is real time scenario but we can do parallel builds as well one job
-
-Jenkins build parallel setup
-
-Go job ---> configure ----> Generall ---> Execute concurrent builds if necessary
-
-
-![image](https://github.com/user-attachments/assets/3216a68f-b10b-44cd-83b5-b62c27525296)
-
-
-![image](https://github.com/user-attachments/assets/909edd87-548d-4ded-a862-29cf850fac05)
-
-
-Here 5 builds execute parallel ,I kept executor is 5 this is same machine 
-
-![image](https://github.com/user-attachments/assets/a840a224-5cbb-43cc-92c1-d135db4ce00f)
-
-
 Build Periodically:::	H/15 * * * *   ----this build happened every 5 minutes without commits ,if changes are commit or not but every 5 mints build happened in Jenkins 
+
 
 Create Sample Build peridiocally jenkins job::
 =============================================
 
 Description
 
-![image](https://github.com/user-attachments/assets/5ad69478-039e-4ef7-a35f-cb18ed8364f1)
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4827b662-c7e4-47ad-8cbc-65ded11d095b" />
+
 
 Git url::
 
-![image](https://github.com/user-attachments/assets/b2cbdb7c-14ac-4fae-a240-90cc7a82c78d)
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/5f0da0e6-fcd7-4ad2-b854-3df9af2393a7" />
+
 
 Build the branch
 
-![image](https://github.com/user-attachments/assets/94230c57-b88f-4ab1-b894-151f30fa6d53)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4f0ac907-c4ab-4ae9-b632-e8ddf71a7160" />
+
+
+every 1 minute build will trigger
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/cf65d287-5c0a-4855-8ddc-9b26be1c7a26" />
+
 
 every 5 mints build will trigger
 
 Build Periodically:::	H/15 * * * *   ----this build happened every 5 minutes without commits ,if changes are commit or not but every 5 mints build happened in Jenkins 
-![image](https://github.com/user-attachments/assets/a5321109-944b-4e79-9294-e28c2adfea0d)
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/1ed08304-1831-4a27-af65-f17da5117e05" />
+
 
 click save 
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/57d8ccdb-34a8-43b0-a5f0-1f0538a0fc10" />
+
+
 
