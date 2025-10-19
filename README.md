@@ -1948,5 +1948,98 @@ Here 10 builds execute parallel ,I kept executor is 10 this is same machine
 
 
 
+17/10/2025::
+==============
 
+
+![image](https://github.com/user-attachments/assets/f204a3a2-d9ac-45fd-8497-e71d0c8bf82b)
+
+Poll SCM ::
+================
+
+Jenkins server ask git if there is any changes in git server or not, if changes there Jenkins server build/package the changes , every change build happened like 5 mints ,means every 5 minutes verify the Jenkins server to git if there is any changes 
+
+<img width="1629" height="686" alt="image" src="https://github.com/user-attachments/assets/63643206-be1e-43da-92bd-03d50cabf97b" />
+
+
+POLL SCM ----* * * * * --every minute when every commit 
+
+Build Periodically:::	
+============================
+
+H/15 * * * *   ----this build happened every 5 minutes without commits ,if changes are commit or not but every 5 mints build happened in Jenkins 
+
+
+Please create a New Jenkins jobs both POLL SCM & Build Periodically 
+
+https://github.com/srinfotechbatch2/spring-petclinic.git
+https://github.com/srinfotechbatch2/onlinebookstore.git
+
+Automatically Discard Old Builds:::
+==============================
+To automate the process of discarding old builds, you can configure the job’s settings to automatically delete old builds based on criteria such as the number of builds to keep or the age of the builds.
+
+Follow these steps:
+
+Open the Jenkins job (project).
+Click on Configure (on the left-hand side).
+Scroll down to the Build Discarder section (usually under the Build Triggers section).
+Check Discard old builds.
+Specify the following options:
+Max # of builds to keep: Set the maximum number of builds to keep.
+Max days to keep builds: Set the maximum age for builds to keep.
+Save the configuration by clicking Save.
+
+
+![image](https://github.com/user-attachments/assets/8d8c9cf9-988a-41e4-b052-539ef601171f)
+
+
+
+Execute the Jobs in Parallel::
+==============================
+
+
+1.By Default execute the Jenkins build jobs are sequence way,one by one 
+
+2.Don’t do 2 projects build parallel  this is real time scenario but we can do parallel builds as well one job
+
+Jenkins build parallel setup
+
+Go job ---> configure ----> Generall ---> Execute concurrent builds if necessary
+
+
+![image](https://github.com/user-attachments/assets/3216a68f-b10b-44cd-83b5-b62c27525296)
+
+
+![image](https://github.com/user-attachments/assets/909edd87-548d-4ded-a862-29cf850fac05)
+
+
+Here 5 builds execute parallel ,I kept executor is 5 this is same machine 
+
+![image](https://github.com/user-attachments/assets/a840a224-5cbb-43cc-92c1-d135db4ce00f)
+
+
+Build Periodically:::	H/15 * * * *   ----this build happened every 5 minutes without commits ,if changes are commit or not but every 5 mints build happened in Jenkins 
+
+Create Sample Build peridiocally jenkins job::
+=============================================
+
+Description
+
+![image](https://github.com/user-attachments/assets/5ad69478-039e-4ef7-a35f-cb18ed8364f1)
+
+Git url::
+
+![image](https://github.com/user-attachments/assets/b2cbdb7c-14ac-4fae-a240-90cc7a82c78d)
+
+Build the branch
+
+![image](https://github.com/user-attachments/assets/94230c57-b88f-4ab1-b894-151f30fa6d53)
+
+every 5 mints build will trigger
+
+Build Periodically:::	H/15 * * * *   ----this build happened every 5 minutes without commits ,if changes are commit or not but every 5 mints build happened in Jenkins 
+![image](https://github.com/user-attachments/assets/a5321109-944b-4e79-9294-e28c2adfea0d)
+
+click save 
 
