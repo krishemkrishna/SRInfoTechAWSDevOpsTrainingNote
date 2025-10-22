@@ -2038,3 +2038,168 @@ click save
 
 
 
+
+21/10/2025::
+==============
+
+
+Email Notifications::
+=======================
+
+1.Setting up Jenkins Email Notifications allows you to alert your team when a build passes, fails, or encounters issues. Here's a step-by-step guide to configure it
+
+2. give continues Feedback to the Dev team via Email when a build passes, fails
+
+<img width="1739" height="576" alt="image" src="https://github.com/user-attachments/assets/0b411df9-85d9-4f47-9837-60566f223acf" />
+
+
+Steps::
+
+Go to mail 
+
+
+![image](https://github.com/user-attachments/assets/e6764012-c4e8-43ab-bea7-0fcf11c61f5e)
+
+Click manage your google account
+
+![image](https://github.com/user-attachments/assets/b2b0e9e5-66ff-4713-b95b-0cc3cc2ecf42)
+
+
+Click Security
+
+
+![image](https://github.com/user-attachments/assets/acc069d3-2944-43d7-a0d0-a0ae17b478d6)
+
+
+Click protect your account
+
+
+![image](https://github.com/user-attachments/assets/a80aa65d-210c-4920-ac59-bff59d001048)
+
+Click Add phone number
+
+![image](https://github.com/user-attachments/assets/d3839125-e302-40a0-a942-497f50f2e08a)
+
+Click add phone
+
+![image](https://github.com/user-attachments/assets/758cb87d-c0df-43d1-890a-6539046b86f7)
+
+![image](https://github.com/user-attachments/assets/e532e1dd-fef8-4ed6-b46c-075d97cdd10d)
+
+![image](https://github.com/user-attachments/assets/96dde956-0cb9-4125-bc16-9b18b5a47883)
+
+Make sure your account is protected 
+
+![image](https://github.com/user-attachments/assets/ef101b4f-f98a-4941-83bb-e99c98a7b583)
+
+
+Make sure 2-steps Verification is ON
+
+
+![image](https://github.com/user-attachments/assets/eb82b19f-0ae0-4df4-8c79-463769e0f2cf)
+
+
+Credentials:
+
+In search box App Password
+
+
+![image](https://github.com/user-attachments/assets/20789330-ae4d-407d-b55c-201452435d33)
+
+![image](https://github.com/user-attachments/assets/45634fa0-7198-4a55-9ce3-bd5c7c7b4c2d)
+
+
+![image](https://github.com/user-attachments/assets/d9e2b041-0e63-42de-96be-0b2406113328)
+
+
+![image](https://github.com/user-attachments/assets/814dc39c-290f-4035-bec8-6871cfd44467)
+
+
+ we should provide this password in Jenkins Email configuration level
+
+
+![image](https://github.com/user-attachments/assets/b1cde092-d3ed-4ae8-b9fb-e3fd32095fce)
+
+
+Go to Jenkins  ---> Manage Jenkins
+
+System configurations
+
+
+![image](https://github.com/user-attachments/assets/e3467726-c6f8-45f5-b728-5012e2e906f3)
+
+
+
+Go to Extended E-mail Notification
+
+
+
+![image](https://github.com/user-attachments/assets/11351c43-ecf5-4327-86d9-a4bcde391589)
+
+
+SMTP server  :: smtp.gmail.com
+
+SMTP Port:: 465
+
+Credentials::
+Username:: Your Email
+Password::Zvqxxvplduhrlffv
+
+![image](https://github.com/user-attachments/assets/7e8c5e1a-785f-4b0e-b85c-f37b6f1123ce)
+
+
+
+Select Use SSL
+
+Default content type HTML
+
+![image](https://github.com/user-attachments/assets/742a4252-a704-4a0c-ad2b-ae35e9c2a2e0)
+
+
+Default Triggers
+
+![image](https://github.com/user-attachments/assets/67d1fe48-b3f0-4d59-a842-054b11a3ed70)
+
+E-mail Notification
+
+
+![image](https://github.com/user-attachments/assets/dc3dfcd8-1454-434b-a88b-44acf32a3f56)
+
+
+![image](https://github.com/user-attachments/assets/37414d6d-d388-4f21-840e-899b8c3e3bf1)
+
+
+Use SMTP Authentication? –should selected
+
+Use SSL select
+
+Port 465
+
+![image](https://github.com/user-attachments/assets/0c8e8c73-69bc-4a2b-a19e-f130e81f8c16)
+
+
+Test configuration by sending test e-mail
+
+![image](https://github.com/user-attachments/assets/b48d366e-5a52-458c-b80d-1c45b803e3ce)
+
+
+Connection success
+
+![image](https://github.com/user-attachments/assets/28f7fd8a-c85e-486a-b2f4-64af53b1db0a)
+
+
+ Post build action
+
+
+![image](https://github.com/user-attachments/assets/d386a9c7-a5cf-4a48-a6ab-5030c96288e0)
+
+
+![image](https://github.com/user-attachments/assets/d200565f-7356-4470-b080-8ba7f731837c)
+
+
+![image](https://github.com/user-attachments/assets/7cddd9fa-8498-47fa-a86b-5066ae058700)
+
+
+![image](https://github.com/user-attachments/assets/60b129a8-5adf-43b1-9639-a293c59d929c)
+
+
