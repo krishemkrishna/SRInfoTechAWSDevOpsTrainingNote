@@ -2206,8 +2206,12 @@ Connection success
 
 
 
+
+
 22/10/2025::
 ==============
+
+
 
 
 Published Artifacts & Test Results::
@@ -2384,4 +2388,6 @@ I want Build a 3 projects ::
 
 I want a build 3 projects ,one project build is success then it will start 2nd project & once 2nd project build is success then it will start 3rd Project, without manually interventions we need setup these 3 projects configurations.
 
-![image](https://github.com/user-attachments/assets/5d043ea2-97c3-4b8f-8b56-95703e1adf95)
+
+<img width="1761" height="685" alt="image" src="https://github.com/user-attachments/assets/4f646e77-20ae-477c-b7aa-6aea1534ca50" />
+
