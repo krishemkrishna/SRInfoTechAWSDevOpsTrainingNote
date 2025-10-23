@@ -2203,3 +2203,185 @@ Connection success
 ![image](https://github.com/user-attachments/assets/60b129a8-5adf-43b1-9639-a293c59d929c)
 
 
+
+
+
+22/10/2025::
+==============
+
+
+Published Artifacts & Test Results::
+=============================
+
+![image](https://github.com/user-attachments/assets/591cddf5-eb86-4942-91a7-1dc5bfbb0f72)
+
+
+![image](https://github.com/user-attachments/assets/23f6cd8e-1aac-4597-9900-a4c759ad4b8a)
+
+Post build Action i want to published artifacts & test results
+
+![image](https://github.com/user-attachments/assets/fcd3ea28-a352-431f-8e1b-86758787fe7a)
+
+I'm going to created one free style job and configured Post-build Actions
+
+In post build Action select the option Archive the artifacts
+
+>target/*.war  OR target/*.jar  OR target/*.zip  OR target/*.ear
+
+![image](https://github.com/user-attachments/assets/44f88d03-d9c8-4800-88e2-06217f721d5c)
+
+![image](https://github.com/user-attachments/assets/7ed9efc9-6a45-4eff-a789-0b7fe50c6024)
+
+
+In post build Action select the option Publish JUnit test result report for to published the test results
+
+>target/surefire-reports/*.xml
+
+
+![image](https://github.com/user-attachments/assets/e3c17557-410c-4915-bec3-2ec5edee6526)
+
+
+
+I want to show test results ::
+=================================
+
+
+>ls target 
+
+Post build action stage
+
+Select archive the artifact
+--target/*.jar
+
+Junit test results::
+--target/surefire-reports/*.xml
+
+See test results & antifactory ::
+===================================
+
+
+![image](https://github.com/user-attachments/assets/819809c2-3611-45e0-abd0-0139b29d166b)
+
+
+
+
+3.For every company will do sequence build on one project this is recommended approach
+
+
+
+General  ---just descriptin
+
+SCM
+
+where is your project--github, bitbucket
+
+Triggere
+
+whenever code changes i want build the project given time
+
+Environmant
+
+--all about workspaces folders
+
+Build Steps
+
+dev team will tell which tool we are using in current project
+
+
+Post Build
+
+devops engineer is aim is given continue feedback to dev team via email notification
+
+
+
+Parameterized Jenkins Jobs ::
+===============================
+
+Run the same job with different inputs without modifying the configuration manually
+
+Go To New Item
+
+![image](https://github.com/user-attachments/assets/695a7137-6283-462b-8ff7-37ffb4f6ff68)
+
+
+Enter Job Name, Free style project and click ok
+
+![image](https://github.com/user-attachments/assets/da12fe42-db98-40e1-af80-1ba335b50596)
+
+
+
+Enter the description
+
+![image](https://github.com/user-attachments/assets/cd3c1d8f-d403-4694-a830-1084796c80ad)
+
+
+Select the option This project is parameterised
+
+![image](https://github.com/user-attachments/assets/e2fb86d9-ea5b-4981-a3ee-81d4645d06c1)
+
+
+Click Add Parameter
+
+![image](https://github.com/user-attachments/assets/2702952d-1e31-4432-a405-88f509bfc58c)
+
+
+Select optiions String parameter or choise parameter or boolean parameter you can select the ny options based on your requirement 
+
+![image](https://github.com/user-attachments/assets/1b18b622-c141-4988-bdc3-785359a04e99)
+
+
+select string parameter
+
+![image](https://github.com/user-attachments/assets/33215729-9b13-46bf-bbbb-b08416979dd6)
+
+
+Select Choise Parameter
+
+![image](https://github.com/user-attachments/assets/59b8db99-1196-4024-9cdf-b3a80a358f81)
+
+
+choise parameter
+
+![image](https://github.com/user-attachments/assets/952de313-ebde-4b39-be7b-c31c6b0ca283)
+
+
+Click Save
+
+![image](https://github.com/user-attachments/assets/4f19f2ba-c85b-4adf-9dd0-16da436011dd)
+
+
+You Can observed this project is parameterized 
+
+![image](https://github.com/user-attachments/assets/fef0f526-c9f2-4dec-8d0e-960efc94d09c)
+
+
+Click Build with parameter
+
+![image](https://github.com/user-attachments/assets/1cbeb32c-bd23-4d87-87be-8e6d010bb968)
+
+
+select deployment environment
+
+![image](https://github.com/user-attachments/assets/af62b4d7-b107-4856-b567-d010efb3a11a)
+
+
+select which versioj you want to deployment like tis you can configured real time parameterized project in jenkins
+
+![image](https://github.com/user-attachments/assets/506da743-2efd-4e19-8082-67592c3c24b1)
+
+
+Click Build
+
+![image](https://github.com/user-attachments/assets/9554cd4a-ba9a-4821-af2e-638d554632a8)
+
+
+![image](https://github.com/user-attachments/assets/28afabd9-1c84-4313-95c6-1ec8bd50488d)
+
+
+
+I want Build a 3 projects ::
+===========================
+
+I want a build 3 projects ,one project build is success then it will start 2nd project & once 2nd project build is success then it will start 3rd Project, without manually interventions we need setup these 3 projects configurations.
+
+![image](https://github.com/user-attachments/assets/5d043ea2-97c3-4b8f-8b56-95703e1adf95)
