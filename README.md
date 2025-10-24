@@ -2655,3 +2655,9 @@ pipeline {
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/661f0dc6-aeb3-4a06-9a7c-b66c55e431bb" />
 
+
+
+Pipeline: Stage View::
+========================
+
+Pipeline: Stage View Plugin in Jenkins The Pipeline: Stage View plugin is a visualization tool in Jenkins that allows users to see a graphical view of each stage in a pipeline. It provides a real-time and historical overview of pipeline execution per stage, making it easier to debug, monitor, and analyze performance.
