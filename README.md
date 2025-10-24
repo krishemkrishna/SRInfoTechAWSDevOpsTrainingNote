@@ -2437,7 +2437,13 @@ Github URL::: https://github.com/parasa7358/spring-petclinic.git
 Post Build Action , select the option Build Other Project  Project-B
 
 
-![image](https://github.com/user-attachments/assets/ef75f777-c273-4255-b063-f9853072dfcb)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d4b24fde-a3a9-4b98-882b-69dc46a4e9e6" />
+
+
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/0b792995-005a-4175-9cdb-4cd8524fea60" />
+
 
 Project -B ::
 =============
@@ -2451,7 +2457,13 @@ Github URL:::https://github.com/parasa7358/onlinebookstore.git
 Post Build Action , select the option Build Other Project Project-C
 
 
-![image](https://github.com/user-attachments/assets/ec7cfc18-002b-4dc3-8438-a75b12b9a438)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/b94f430d-2173-4d08-8432-f7e86ec9b47c" />
+
+
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/efa90369-f73d-4b25-bcc9-72841cb42c4f" />
+
 
 
 Project-C::
@@ -2461,13 +2473,24 @@ Project-C::
 Github URL:::https://github.com/srinfotechbatch2/devOpsWeb.git
 
 
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/69efc57e-2857-46d7-a3ab-34a58b5b0aae" />
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/256cac24-5476-4b71-8079-adb194559549" />
+
+
+
+
 Pipelines Introduction:::
+=============================
 
 A Jenkins pipeline is a series of automated steps or stages that define the process of continuous integration/continuous delivery (CI/CD) for your code. Jenkins, being a popular open-source automation server, uses pipelines to automate tasks like building, testing, and deploying code.
 
 There are two types of Jenkins pipelines:
 
 1. Declarative Pipeline
+
 2. Scripted Pipeline
 
 1. Declarative Pipeline::
@@ -2481,20 +2504,27 @@ Steps
 Click +New Item
 
 
-![image](https://github.com/user-attachments/assets/43694be8-ac77-41a1-9d90-30175a91443f)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/3ac406d8-9a29-4e2f-9711-226ff8806524" />
+
 
 Enter the Project Name And Click OK
 
-![image](https://github.com/user-attachments/assets/b21659a3-ff70-46ff-86b0-7a965b48197a)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/339a329c-47d6-41e0-b008-6128965033c5" />
+
 
 At General Section Provide the Description
 
-![image](https://github.com/user-attachments/assets/e0c5db89-597c-439e-91e1-7722bd4d5467)
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/cb474edb-bcaf-42f9-9d1d-b51da6333b74" />
 
 
 At Definition, We need to select the Pipeline Script 
 
-![image](https://github.com/user-attachments/assets/f9b35819-0b40-4d71-9678-949d35a4cd3e)
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/5dc25001-3022-4d7a-8772-64c2bf85c55e" />
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/58d97da8-8baa-43e2-b25f-ad8c60fd0c32" />
 
 
 
@@ -2567,3 +2597,61 @@ steps{
 }
 
 }
+
+
+
+pipeline {
+   
+    agent any
+
+    stages {
+       
+        stage('Clone') {
+           
+            steps {
+              
+                echo 'Hello World'
+            }
+        }
+        stage('Build') {
+           
+            steps {
+              
+                echo 'Hello World'
+            }
+        }
+        stage('Test') {
+           
+            steps {
+               
+                echo 'Hello World'
+            }
+        }
+        stage('Generate the test reports') {
+          
+            steps {
+               
+                echo 'Hello World'
+            }
+        }
+        stage('Publishered Artifacts') {
+           
+            steps {
+              
+                echo 'Hello World'
+            }
+        }
+        stage('Deploy') {
+          
+            steps {
+              
+                echo 'Hello World'
+            }
+        }
+    }
+}
+
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/661f0dc6-aeb3-4a06-9a7c-b66c55e431bb" />
+
