@@ -2679,21 +2679,23 @@ The Pipeline: Stage View plugin is a visualization tool in Jenkins that allows u
 
 Click the Build Now and we can triggered the pipeline
 
-![image](https://github.com/user-attachments/assets/4e211efb-fafe-4598-b29c-bb4bd5d488f2)
 
 
 
-![image](https://github.com/user-attachments/assets/04315f1c-44ff-4078-952b-38320fec68c8)
+
+
 
 
 Success all the stages & Steps
 
 
-![image](https://github.com/user-attachments/assets/318c9d53-56fc-4815-9205-74d4dac0bf28)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/40a1524f-7926-4d0c-b294-c43ede8350f2" />
+
 
 
 Key elements in the declarative pipeline:::
 ======================================
+
 pipeline: This is the top-level structure.
 
 agent: Specifies where the pipeline will run, such as on any available agent, a specific node, or a Docker container.
@@ -2750,7 +2752,9 @@ archive the artifact :: target/*.jar
 
 Junit test results:: target/surefire-reports/*.xml
 
-![image](https://github.com/user-attachments/assets/0649e7f3-4c6e-4767-8588-d561c5f9e685)
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/b216b582-74a9-47de-9351-1fcd88930af4" />
+
 
 
 Pipeline as Code::
@@ -2758,7 +2762,10 @@ Pipeline as Code::
 
 Both declarative and scripted pipelines are stored as Jenkinsfiles, which you place in your source code repository. This allows you to version control your pipeline and keep it aligned with your application code.
 
+
 ![image](https://github.com/user-attachments/assets/7d3b20e8-e72f-41ff-94ce-0c912f51a93d)
+
+
 
 ![image](https://github.com/user-attachments/assets/edd96e0c-ac4d-438e-8a5b-97ae99ed1fda)
 
@@ -2824,15 +2831,20 @@ This pipeline:::
 
 JOb creation::
 
-![image](https://github.com/user-attachments/assets/dacaf03a-5557-44ce-88ba-0b230ed061cb)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/edec9bbf-3656-4edb-b80f-46661524dcaa" />
 
 Branches to build
 
-![image](https://github.com/user-attachments/assets/64065ba7-534e-4771-a667-00d5f64e5a4b)
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/062ed8d1-560c-49d7-9668-d91f7a901706" />
+
 
 Script Path::: This path is Jenkinsfiles where we maintained in github source code level
 
-![image](https://github.com/user-attachments/assets/3b4783f0-c613-45d1-81a7-00712a79f5ad)
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/c423564b-85df-44b8-a366-c2738ec4b22e" />
+
 
 
 Scripted pipeline with Jenkinsfile::
@@ -2867,12 +2879,16 @@ node{
 
 
 
-![image](https://github.com/user-attachments/assets/90db8ef7-ded5-473a-bb1c-78fcd7c68f2f)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/aaa9e47f-71a3-46e8-876b-f26d9faba86c" />
+
 
 
 github sourcecode jenkinsfile 
 
-![image](https://github.com/user-attachments/assets/44f93ca7-1d95-4efb-afad-cc262de61dbe)
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/7d17ef94-2780-42b3-8e61-d7fce9b4d15e" />
+
 
 
 
