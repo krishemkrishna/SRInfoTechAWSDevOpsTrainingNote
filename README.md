@@ -2661,3 +2661,218 @@ Pipeline: Stage View::
 ========================
 
 Pipeline: Stage View Plugin in Jenkins The Pipeline: Stage View plugin is a visualization tool in Jenkins that allows users to see a graphical view of each stage in a pipeline. It provides a real-time and historical overview of pipeline execution per stage, making it easier to debug, monitor, and analyze performance.
+
+
+
+
+
+24/10/2025::
+=============
+
+
+Pipeline: Stage View::
+=================
+
+Pipeline: Stage View Plugin in Jenkins
+The Pipeline: Stage View plugin is a visualization tool in Jenkins that allows users to see a graphical view of each stage in a pipeline. It provides a real-time and historical overview of pipeline execution per stage, making it easier to debug, monitor, and analyze performance.
+
+
+Click the Build Now and we can triggered the pipeline
+
+![image](https://github.com/user-attachments/assets/4e211efb-fafe-4598-b29c-bb4bd5d488f2)
+
+
+
+![image](https://github.com/user-attachments/assets/04315f1c-44ff-4078-952b-38320fec68c8)
+
+
+Success all the stages & Steps
+
+
+![image](https://github.com/user-attachments/assets/318c9d53-56fc-4815-9205-74d4dac0bf28)
+
+
+Key elements in the declarative pipeline:::
+======================================
+pipeline: This is the top-level structure.
+
+agent: Specifies where the pipeline will run, such as on any available agent, a specific node, or a Docker container.
+
+stages: Defines the different steps or stages in the pipeline (e.g., Build, Test, Deploy).
+
+steps: Commands to be executed in each stage.
+
+
+
+Please try to create one pipeline job in jenkinsfile and execute the below Declarative pipeline example:;
+
+pipeline {
+
+agent any
+
+stages {
+    stage('Clone') {
+        steps {
+            git branch: 'main', url: 'https://github.com/srinfotech7358/spring-petclinic.git'
+        }
+    }
+    
+      stage('Build') {
+        steps {
+           bat 'mvn clean install'
+        }
+    }
+      stage('Test') {
+        steps {
+           bat 'mvn test'
+        }
+    }
+    
+      stage('Generate Junit Test Results') {
+        steps {
+           junit 'target/surefire-reports/*.xml'
+        }
+    }
+    
+      stage('Generate Artifacts') {
+        steps {
+           archiveArtifacts artifacts: 'target/*.war', followSymlinks: false
+        }
+    }
+}
+}
+
+
+See test results & antifactory ::
+================================
+
+archive the artifact :: target/*.jar
+
+Junit test results:: target/surefire-reports/*.xml
+
+![image](https://github.com/user-attachments/assets/0649e7f3-4c6e-4767-8588-d561c5f9e685)
+
+
+Pipeline as Code::
+===================
+
+Both declarative and scripted pipelines are stored as Jenkinsfiles, which you place in your source code repository. This allows you to version control your pipeline and keep it aligned with your application code.
+
+![image](https://github.com/user-attachments/assets/7d3b20e8-e72f-41ff-94ce-0c912f51a93d)
+
+![image](https://github.com/user-attachments/assets/edd96e0c-ac4d-438e-8a5b-97ae99ed1fda)
+
+
+
+
+Pipeline as Code::
+==================
+Both declarative and scripted pipelines are stored as Jenkinsfiles, which you place in your source code repository. This allows you to version control your pipeline and keep it aligned with your application code.
+
+Declarative pipeline with Jenkinsfile::
+===============================
+
+pipeline {
+    agent any
+
+    stages {
+        stage('Clone') {
+            steps {
+                git branch: 'main', url: 'git@github.com:parasa7358/spring-petclinic.git'
+            }
+        }
+        stage('Build') {
+            steps {
+                sh 'mvn package'
+            }
+        }
+        
+        stage('Test') {
+            steps {
+                sh 'mvn test'
+            }
+        }
+        stage('Test Results Reports') {
+            steps {
+                junit 'target/surefire-reports/*.xml'
+            }
+        }
+        
+        stage('Artifacts') {
+            steps {
+                archiveArtifacts artifacts: 'target/*.war', followSymlinks: false
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+    }
+}
+
+
+This pipeline:::
+
+1 Checks out the source code from your Git repository.
+
+2. Builds the project using Maven.
+   
+3.Runs unit tests.
+
+4.Deploys the application using a custom script.
+
+JOb creation::
+
+![image](https://github.com/user-attachments/assets/dacaf03a-5557-44ce-88ba-0b230ed061cb)
+
+Branches to build
+
+![image](https://github.com/user-attachments/assets/64065ba7-534e-4771-a667-00d5f64e5a4b)
+
+Script Path::: This path is Jenkinsfiles where we maintained in github source code level
+
+![image](https://github.com/user-attachments/assets/3b4783f0-c613-45d1-81a7-00712a79f5ad)
+
+
+Scripted pipeline with Jenkinsfile::
+===============================
+
+
+node{
+
+    stage('clone'){
+        git branch: 'main', url: 'https://github.com/srinfotechbatch2/spring-petclinic.git'
+
+    }
+
+     stage('build'){
+
+        bat 'mvn clean install'
+    }
+
+     stage('Test'){
+      bat 'mvn test'
+        
+    }
+     stage('Artifacts'){
+     archiveArtifacts artifacts: 'target/*.jar', followSymlinks: false
+        
+    }
+     stage('generated test reports'){
+    junit 'target/surefire-reports/*.xml'
+        
+    }
+}
+
+
+
+![image](https://github.com/user-attachments/assets/90db8ef7-ded5-473a-bb1c-78fcd7c68f2f)
+
+
+github sourcecode jenkinsfile 
+
+![image](https://github.com/user-attachments/assets/44f93ca7-1d95-4efb-afad-cc262de61dbe)
+
+
+
