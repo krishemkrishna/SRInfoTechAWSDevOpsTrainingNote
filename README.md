@@ -3007,7 +3007,9 @@ tomcat-users.xml file::
 
 
 
-![image](https://github.com/user-attachments/assets/61a0b6ae-1e6c-47d0-8852-b226d65f38a4)
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/c3d43081-1646-4980-b961-1743418f303f" />
+
 
 
 
@@ -3095,25 +3097,31 @@ Github Project URL:::
 https://github.com/srinfotech7358/onlinebookstore.git
 
 
-![image](https://github.com/user-attachments/assets/73aa8ffc-90f2-4d45-9d39-8cf6ff7358a0)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/a91a97b0-9caa-400d-8f89-5d1b82bb9d6c" />
+
 
 TomcatIntegarteWithJenkins::
 
-![image](https://github.com/user-attachments/assets/747c3c66-3f12-4048-84c5-02a87119463e)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/1bb75284-c2f7-4d89-8f86-b395efc5bc33" />
 
-![image](https://github.com/user-attachments/assets/3df4e76b-15b0-4da5-88eb-d83a8f5982ad)
 
 ![image](https://github.com/user-attachments/assets/5fc161ca-106f-442c-9938-1ea4c840e919)
 
 POLL SCM
 
-![image](https://github.com/user-attachments/assets/451a29ca-845b-4ec8-a4c2-f0325386aca4)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/53f4eb27-37ca-4019-8452-f4c8d1fbd582" />
+
 
 Build Steps
 
-![image](https://github.com/user-attachments/assets/82271c03-60b4-4383-b0cd-429f1d24226a)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/bf7e1b40-71cb-47ff-8bc9-75b02deba898" />
+
 
 Post-build Actions
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d32fadf6-fda7-431c-bb3b-6ff0420b2beb" />
+
 
 Deploy war/ear to a container
 
@@ -3121,7 +3129,10 @@ WAR/EAR files ----> target/*.war
 
 Context path ---> SRinfotechonlinebookstore
 
-![image](https://github.com/user-attachments/assets/b15d3751-a792-49f8-a590-05a7e9761c92)
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/45afbce3-b983-4ac5-9ccf-6ea537f7accd" />
+
 
 Tomcat 9.x Remote
 
@@ -3129,7 +3140,10 @@ Tomcat 9.x Remote
 
 Tomcat URL:: http://localhost:8080
 
-![image](https://github.com/user-attachments/assets/aeed88d6-aec3-4aef-8880-ff871e1d6345)
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/80b00435-1fdc-4855-a039-d8a2a49484b2" />
+
 
 
 
