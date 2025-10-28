@@ -2937,7 +2937,9 @@ https://tomcat.apache.org/download-90.cgi
 
 64-bit Windows zip
 
-![image](https://github.com/user-attachments/assets/bba6eafd-95c3-4963-a862-b4b97bb8cd24)
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/17a4f6bb-d883-4507-9ecd-eba5c04e4418" />
+
 
 
 Integrate Tomcat Jenkins::
@@ -3003,7 +3005,11 @@ https://stackoverflow.com/questions/7763560/401-unauthorized-error-while-logging
 tomcat-users.xml file::
 =========================
 
+
+
 ![image](https://github.com/user-attachments/assets/61a0b6ae-1e6c-47d0-8852-b226d65f38a4)
+
+
 
 
 
@@ -3124,5 +3130,17 @@ Tomcat 9.x Remote
 Tomcat URL:: http://localhost:8080
 
 ![image](https://github.com/user-attachments/assets/aeed88d6-aec3-4aef-8880-ff871e1d6345)
+
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/5238e642-33bd-4572-ad79-2ab0f83d7d3a" />
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4498301f-9f68-4e49-bac5-613c7fe75f50" />
+
+
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4d881060-16e9-4110-8140-e0d9ffe19577" />
 
 
