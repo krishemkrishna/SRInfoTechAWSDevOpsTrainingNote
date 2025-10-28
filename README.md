@@ -2947,7 +2947,8 @@ Integrate Tomcat Jenkins::
 
 
 
-![image](https://github.com/user-attachments/assets/7155f817-58cd-4f85-93e8-405b7c96fd7b)
+<img width="1827" height="737" alt="image" src="https://github.com/user-attachments/assets/07ffcb8c-ab3f-44df-b3ff-bb1eac042496" />
+
 
 
 
