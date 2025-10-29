@@ -3159,3 +3159,270 @@ Tomcat URL:: http://localhost:8080
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4d881060-16e9-4110-8140-e0d9ffe19577" />
 
 
+
+
+28/10/2025::
+===============
+
+
+CI/CD::
+==========
+
+Continuous Integration & Continutes Deployment & COntinuoues Delivery::
+=======================================================================
+
+Continuous Integration(CI)::the practice of automating the integration of code changes from multiple Developers into a single software project. It's a primary DevOps best practice, allowing developers to frequently merge code changes into a central repository,after which automated builds and tests are run automatically.
+
+developers frequently commit to a shared repository using a version control system such as Git,A continuous integration automatically builds and runs unit tests on the new code changes to immediately using jenkins Orchestration.
+
+
+
+<img width="1813" height="729" alt="image" src="https://github.com/user-attachments/assets/c4d5fa10-fe9f-41bd-8188-5bae0e24a4d5" />
+
+
+
+Continuous Deployment(CD) :: Continuous Deployment is an extension of continuous delivery. With continuous deployment, every change that passes through the automated tests and builds is automatically deployed to production without any human intervention. The deployment process is fully automated.
+
+Continuous Delivery (CD)::Continuous Delivery is a software development practice in which code changes are automatically built, tested, and prepared for release to production in a consistent and reliable manner. The key distinction of continuous delivery is that the process of deploying the code to production is done manually by a human decision-maker.
+
+
+
+Deploy Onlinebookstore/spring-petclinic applications to target server (Tomcat)::
+=====================================================================================================================
+
+
+https://github.com/srinfotechbatch4/onlinebookstore.git
+
+https://github.com/srinfotechbatch4/Petclinic.git
+
+
+please create one new pipeline job
+
+Provide the Description
+
+![image](https://github.com/user-attachments/assets/458b8076-ebce-4ac0-932e-64ee5a6e460b)
+
+Enabled POLL SCM
+
+![image](https://github.com/user-attachments/assets/5b5ae6d9-987a-4c54-9450-c3a89497be29)
+
+In Pipeline Section write groovy script using Declarative style 
+
+
+![image](https://github.com/user-attachments/assets/5d624b7b-9224-4d20-863f-0f3e4671916e)
+
+
+Generate Deploy pipeline script::
+====================================
+
+
+
+
+Script::
+=======
+
+pipeline
+{
+    agent any
+
+    tools{
+
+        maven 'maven'
+    }
+
+stages{
+stage('Git checkout'){
+
+    steps{
+
+        git branch: 'main' url: 'https://github.com/srinfotechbatch4/Petclinic.git'
+
+    }
+}
+
+stage('clean and install'){
+
+    steps{
+
+      sh 'mvn clean install'
+
+    }
+}
+
+stage('Package'){
+
+    steps{
+
+      sh 'mvn package'
+
+    }
+}
+
+stage('Archive the Artifacts'){
+
+    steps{
+
+      sh 'mvn clean install'
+    }
+    post{
+        success{
+
+            archiveArtifacts artifacts: '**target/*.war'
+        }
+    }
+
+    }
+
+
+stage('Test Cases'){
+
+    steps{
+
+      sh 'mvn test'
+
+    }
+}
+
+
+stage('Deploy to tomcat server'){
+
+    steps{
+
+      deploy adapters: [tomcat9(credentialsId: 'tomcat9credentials', path: '', url: 'http://localhost:8080/')], contextPath: 'SRINFOTECH', war: '**/*.war'
+
+    }
+}
+
+}
+}
+
+
+Run the job
+
+
+![image](https://github.com/user-attachments/assets/f240a720-41dd-4bc0-955d-a247b1cf8918)
+
+![image](https://github.com/user-attachments/assets/369955cf-0f1c-4ae1-bae3-3870edc0e282)
+
+Integrate Jenkins with Tomcat using Declarative Approach::
+============================================
+
+To integrate Jenkins with Tomcat using the Declarative Pipeline approach, you'll be using Jenkins Pipeline syntax to automate the deployment process to a Tomcat server. This process typically involves building the application, packaging it, and then deploying it to Tomcat.
+
+1. Jenkinsfile Configuration (Declarative Pipeline)
+
+In your Jenkins project, you'll create a Jenkinsfile, which contains the Declarative Pipeline syntax. This file defines the steps involved in the CI/CD pipeline.
+
+Please execute below script in jenkins pipeline job using Declarative style
+
+
+pipeline
+
+{
+    agent any
+
+    tools{
+
+        maven 'maven'
+    }
+
+stages{
+
+stage('Git checkout'){
+
+    steps{
+
+        git branch: 'main', url: 'https://github.com/srinfotechbatch2/Petclinic.git'
+
+    }
+}
+
+stage('clean and install'){
+
+    steps{
+
+      bat 'mvn clean install'
+
+    }
+}
+
+stage('Package'){
+
+    steps{
+
+      bat 'mvn package'
+
+    }
+}
+
+stage('Archive the Artifacts'){
+
+    steps{
+
+      bat 'mvn clean install'
+    }
+    post{
+        success{
+
+            archiveArtifacts artifacts: '**target/*.war'
+        }
+    }
+
+    }
+
+
+stage('Test Cases'){
+
+    steps{
+
+      bat 'mvn test'
+
+    }
+}
+
+
+stage('Deploy to tomcat server'){
+
+    steps{
+
+      deploy adapters: [tomcat9(credentialsId: 'tomcat9credentials', path: '', url: 'http://localhost:8080/')], contextPath: 'SRINFOTECH', war: '**/*.war'
+
+    }
+}
+
+}
+}
+
+
+Onlinebookstore::
+=============
+
+ pipeline {
+    agent any
+
+    stages {
+        stage('Clone') {
+            steps {
+                git branch: 'master', url: 'https://github.com/srinfotechbatch4/onlinebookstore.git'
+            }
+        }
+        
+          stage('Build') {
+            steps {
+               bat 'mvn clean install'
+            }
+        }
+         stage('Generate Artifacts') {
+            steps {
+               archiveArtifacts artifacts: 'target/*.war', followSymlinks: false
+            }
+        }
+
+          stage('Deploy to Tomcat Server') {
+            steps {
+               deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: 'Tomcat', path: '', url: 'http://localhost:8080')], contextPath: 'SR INFOTECH SOLUTIONS PVT LIMITED', war: 'target/*.war'
+            }
+        }
+    }
+}
+
