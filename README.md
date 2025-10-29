@@ -3200,20 +3200,33 @@ please create one new pipeline job
 
 Provide the Description
 
-![image](https://github.com/user-attachments/assets/458b8076-ebce-4ac0-932e-64ee5a6e460b)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/9772aee8-eb5e-4d98-b164-81818916196a" />
+
 
 Enabled POLL SCM
 
-![image](https://github.com/user-attachments/assets/5b5ae6d9-987a-4c54-9450-c3a89497be29)
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/e1a4b078-8137-42d7-ad87-bf5aa463436c" />
+
 
 In Pipeline Section write groovy script using Declarative style 
 
 
-![image](https://github.com/user-attachments/assets/5d624b7b-9224-4d20-863f-0f3e4671916e)
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/2acaf030-4f6d-4d3f-854e-67725212196d" />
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/277221e4-313a-4733-ae28-bddbdcbe886f" />
+
 
 
 Generate Deploy pipeline script::
 ====================================
+
+
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/bd9d8f5e-9f72-405a-9b9f-ee5469565917" />
 
 
 
@@ -3297,12 +3310,6 @@ stage('Deploy to tomcat server'){
 }
 
 
-Run the job
-
-
-![image](https://github.com/user-attachments/assets/f240a720-41dd-4bc0-955d-a247b1cf8918)
-
-![image](https://github.com/user-attachments/assets/369955cf-0f1c-4ae1-bae3-3870edc0e282)
 
 Integrate Jenkins with Tomcat using Declarative Approach::
 ============================================
@@ -3394,6 +3401,16 @@ stage('Deploy to tomcat server'){
 }
 
 
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/96c7b15e-5cb4-4fb5-b7f9-9c75df840eb6" />
+
+
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d3fa033c-987c-44d7-ac92-b6f73c5605f4" />
+
+
+
 Onlinebookstore::
 =============
 
@@ -3425,4 +3442,16 @@ Onlinebookstore::
         }
     }
 }
+
+
+
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/e5b7f0d0-0344-4451-9e51-fe7b78064b3e" />
+
+
+
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/00a87812-0eae-496c-a4bf-e3b1a0a70d20" />
 
