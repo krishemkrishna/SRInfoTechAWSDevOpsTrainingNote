@@ -3558,47 +3558,73 @@ Obtain the Project Key from the SonarQube project and update the pipeline script
 
 Go to Projects and click Local project
 
-![image](https://github.com/user-attachments/assets/0b177021-0fc2-4ba4-a987-fee4a3420717)
+<img width="940" height="529" alt="image" src="https://github.com/user-attachments/assets/2e63be88-e670-4114-8b5c-93e07584f2bc" />
+
+
+<img width="940" height="529" alt="image" src="https://github.com/user-attachments/assets/91fad37f-6ac4-4122-983c-8f5796f1530e" />
+
+
+<img width="940" height="529" alt="image" src="https://github.com/user-attachments/assets/a719339c-e372-44e5-885f-668dccf142ad" />
+
 
 Click Next
 
-![image](https://github.com/user-attachments/assets/2cccbec2-463b-47ab-9379-f02244272f3a)
+
+<img width="940" height="529" alt="image" src="https://github.com/user-attachments/assets/873ad6d9-e1f1-4358-94dc-a66eb0bef912" />
+
+
 
 Selected Use the global setting
 
-![image](https://github.com/user-attachments/assets/702766f0-01a9-4919-bbda-acb3a8996dcd)
+
+
+<img width="940" height="529" alt="image" src="https://github.com/user-attachments/assets/3c919465-78a5-48c8-9d1b-f9b6e5fa9cb5" />
+
 
 Click Create Project
 
-![image](https://github.com/user-attachments/assets/a614a64f-7171-43c3-b19e-787e13ee0c16)
+<img width="940" height="529" alt="image" src="https://github.com/user-attachments/assets/c1c32490-9feb-4778-9d30-045a8ef690c5" />
+
+Project created successfully
 
 Now Spring-petclinic Project created in Sonarqube
 
-![image](https://github.com/user-attachments/assets/0f79347c-8bde-4fa3-8eaa-3ca91a27422d)
+
+
+<img width="940" height="529" alt="image" src="https://github.com/user-attachments/assets/413c6966-ad2a-4e73-8564-16124ef0e7da" />
+
 
 Click Locally
 
-![image](https://github.com/user-attachments/assets/d6e4fa35-299c-4768-b291-c669d9b52995)
 
-![image](https://github.com/user-attachments/assets/ba49dbeb-8f7f-4fb4-ab7d-8c4d3644a133)
+<img width="940" height="529" alt="image" src="https://github.com/user-attachments/assets/ce45d793-ba57-4a11-839e-0597a7a9d58d" />
+
 
 Click Generate for Token
+
+
+<img width="940" height="529" alt="image" src="https://github.com/user-attachments/assets/577aa7fd-47a2-4825-a7cb-4b9ed9762b69" />
+
 
 Analyze "spring-petclinic12": sqp_0eb364758c5186bea4077eff841ddb99ba89a3ab
 
 
-![image](https://github.com/user-attachments/assets/7e46dded-06da-467a-8838-62e9f0337a7a)
 
 Click Continue
 
-![image](https://github.com/user-attachments/assets/590c723c-0df3-48df-bf7d-77575e63614a)
+<img width="940" height="529" alt="image" src="https://github.com/user-attachments/assets/a13815c9-7a04-4d51-8d2b-735960a78ec9" />
 
-![image](https://github.com/user-attachments/assets/ace61156-d25b-4d00-b248-d5bd0b1de835)
 
 Selected Maven and copy below script from sonarqube and it will help to integrate Sonarqube with jenkins pipeline
 
-![image](https://github.com/user-attachments/assets/1da2fbb2-5118-45e5-85ec-c7767a44529b)
 
+
+<img width="940" height="529" alt="image" src="https://github.com/user-attachments/assets/577aa7fd-47a2-4825-a7cb-4b9ed9762b69" />
+
+
+Analyze "spring-petclinic12": sqp_0eb364758c5186bea4077eff841ddb99ba89a3ab
+
+Using this token integrate with Jenkins
 
 mvn clean verify sonar:sonar \
   -Dsonar.projectKey=spring-petclinic12 \
@@ -3607,112 +3633,191 @@ mvn clean verify sonar:sonar \
   -Dsonar.token=sqp_0eb364758c5186bea4077eff841ddb99ba89a3ab
 
 
+<img width="940" height="529" alt="image" src="https://github.com/user-attachments/assets/2bbc2019-9ff1-4879-8ef0-bd365d040ec4" />
+
+
+
+Install sonarqube plugin
+
+Go to manage Jenkins ---plugins
+
+SonarQube Scanner
+
+
+<img width="940" height="529" alt="image" src="https://github.com/user-attachments/assets/9ab9a0cc-2e50-4eca-b9ee-fc493c5712f9" />
+
+
+<img width="940" height="529" alt="image" src="https://github.com/user-attachments/assets/545794cd-e22a-46fe-bf98-cdf220b676f6" />
+
+
+
+Go to System Configuration
+
+
+<img width="940" height="529" alt="image" src="https://github.com/user-attachments/assets/f5cf5ce8-7a1c-42ac-92a3-159d875d68e0" />
+
+
+SonarQube servers
+
+<img width="940" height="529" alt="image" src="https://github.com/user-attachments/assets/448b0cf4-5962-4490-bbd8-9a22cce87947" />
+
+
+Provide the Server URL
+
+
+Provide the sonarqube token which we created in sonarqube
+
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/c8d6699f-cced-4b0c-9c18-1fc9cf8aabb9" />
+
+
+need to add credentials at manage jenkisn -- Credentials
+
+
+<img width="940" height="529" alt="image" src="https://github.com/user-attachments/assets/86c12f3f-a7fa-4eea-a084-3fd112becc78" />
+
+
+
+Select Secret text
+
+<img width="940" height="529" alt="image" src="https://github.com/user-attachments/assets/398b0064-5ad5-4efd-a7a6-678c490a1668" />
+
+
+Copy secret token key
+
+<img width="940" height="529" alt="image" src="https://github.com/user-attachments/assets/aca484b6-167c-4427-930b-e870424c0ed6" />
+
+
+Click Create
+
+
+
+<img width="940" height="529" alt="image" src="https://github.com/user-attachments/assets/06acbdf8-4447-4125-a849-031033715253" />
+
+
+Now go to manage Jenkins - System configuration and select the credentials now
+
+
+<img width="940" height="529" alt="image" src="https://github.com/user-attachments/assets/0def4626-3d17-4c1d-b4a8-16c366bd726e" />
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/b4c54b9f-04a3-4fd4-be4b-e4b6eb5534c8" />
+
+
 
  IntegrateSonarqubeWithJenkins::
   ==================================
 
   Go To jenkins and create new job IntegrateSonarqubeWithJenkins
 
-  ![image](https://github.com/user-attachments/assets/dc7d3f1e-5852-4288-bf00-5537b6a4935c)
+
+<img width="940" height="529" alt="image" src="https://github.com/user-attachments/assets/e0c8f57e-e0b0-4887-bf24-da6af9daab2a" />
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/b6b00394-3a60-47fe-9ff6-4dcc105b3453" />
+
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/dcbef5f5-5cb8-4ccf-b18f-c2c1a166f31f" />
+
+
 
 Please use below script to run the pipeline job
 
-pipeline
-{
+
+pipeline {
     agent any
-
+    
     tools{
-
-        maven 'maven'
+        
+        maven 'Maven'
     }
 
-stages{
-stage('Git checkout'){
+    stages {
+       
+        stage('Clone the Project') {
+          
+            steps {
+            
+               git branch: 'feature/2025.10.28', credentialsId: 'githubcredentials', url: 'https://github.com/srinfotechbatch4/Petclinic.git'
+            }
+        }
 
-    steps{
+        stage('Build the Project') {
+           
+            steps {
+             
+               bat 'mvn clean install'
+            }
+        }
 
-        git branch: 'main', url: 'https://github.com/parasa7358/Petclinic.git'
+         stage('Tests') {
+           
+            steps {
+             
+               bat 'mvn test'
+            }
+        }
+        
+         stage('Generate the Junit test results'){
+            
+           
+            steps{
+            
+              junit 'target/surefire-reports/*.xml'
+            }
+        }
+        
+         stage('Sonarqube Analysis') {
+          
+            steps {
+              
+              bat 'mvn package'
+             
+              bat '''mvn sonar:sonar \
+              
+              -Dsonar.projectKey=spring-petclinic \
+            
+               -Dsonar.projectName='spring-petclinic' \
+              
+                -Dsonar.host.url=http://localhost:9000 \
+              
+                 -Dsonar.token=sqp_4c5f65664adfb4af0a9eef6f9c67d07e390ab18c'''
+            }
+        }
 
-    }
-}
+        stage('Artifact Publisher') {
+          
+            steps {
+               
+               archiveArtifacts artifacts: 'target/*.war', followSymlinks: false
+            }
+        }
 
-stage('clean and install'){
-
-    steps{
-
-      bat 'mvn clean install'
-
-    }
-}
-
-stage('Package'){
-
-    steps{
-
-      bat 'mvn package'
-
-    }
-}
-
-stage('Archive the Artifacts'){
-
-    steps{
-
-      bat 'mvn clean install'
-    }
-    post{
-        success{
-
-            archiveArtifacts artifacts: '**target/*.war'
+         stage('Deploy to Tomcat Server') {
+           
+            steps {
+              
+               
+               deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: 'Tomcatcredetials', path: '', url: 
+               
+               'http://localhost:8080/')], contextPath: 'SRINFOTECHSOnarTest', war: 'target/*.war'
+            }
         }
     }
-
-    }
-
-
-stage('Test Cases'){
-
-    steps{
-
-      bat 'mvn test'
-
-    }
-}
-
-stage('Sonarqube Analysis'){
-
-    steps{
-
-      bat 'mvn clean package'
-
-    bat '''mvn sonar:sonar \
-  -Dsonar.projectKey=spring-petclinic \
-  -Dsonar.projectName='spring-petclinic' \
-  -Dsonar.host.url=http://localhost:9000 \
-  -Dsonar.token=sqp_8d74d659dbf3d3bf2924a0d24104f5ddba914fac'''
-
-    }
 }
 
 
-stage('Deploy to tomcat server'){
 
-    steps{
-
-      deploy adapters: [tomcat9(credentialsId: 'tomcat9credentials', path: '', url: 'http://localhost:8080/')], contextPath: 'Ifocus Solutions Pvt Ltd', war: '**/*.war'
-
-    }
-}
-
-}
-}
-
-
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/aaae3049-ddf8-48e1-8742-037672cb6b76" />
 
  
 
 1. please start Jenkins on your machine & make sure Jenkins server is UP & Running state
+
 2. please start Tomcat on your machine & make sure Tomcat server is UP & Running state
+
 3. please start Sonarqube on your machine & make sure Sonarqube server is UP & Running state
 
 once above steps done then we can execute below script
@@ -3781,42 +3886,57 @@ stages{
 
 Once sonarqube scanner done, please verify the sonarqube dashboard for reports & results
 
-![image](https://github.com/user-attachments/assets/acc53857-78ca-4e07-becc-6aba969c61b4)
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/06b0b6d2-4331-415c-8125-800e1d82daec" />
+
 
 Go to Administration
 
-![image](https://github.com/user-attachments/assets/e94cc57e-d8fe-4d4a-8110-6a0afa2164af)
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/8e86ab58-c2d9-4f3f-8414-952691a065f0" />
+
 
 
 Click Projects & Select Background Tasks
 
 
-![image](https://github.com/user-attachments/assets/53d35e0d-abe2-462e-a608-4736b3cd06c4)
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/94fa5e45-c471-4f66-aa89-ae873b249045" />
+
 
 You can able to see all scanned projects status
 
-![image](https://github.com/user-attachments/assets/7075a240-88a1-4c2b-b68d-c963e8f666aa)
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/c2a79822-d630-4580-bee2-62fef19b4bca" />
+
 
 Click on any Project, see the PASSED the quality gates
 
-![image](https://github.com/user-attachments/assets/0d329366-3a10-4131-b5a4-e2fb7063647d)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/0290f00a-4a0d-4777-b86e-165a8ee79def" />
+
 
 Click on Overall Code option
 
-![image](https://github.com/user-attachments/assets/8435ef6f-8152-42fc-85c4-ab3940473379)
 
-![image](https://github.com/user-attachments/assets/3b454b9a-6c88-435f-b543-962f710b3f86)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4dc3dfe0-bbd4-4cd1-9d55-d55358dc0cd4" />
+
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/f8ed7afb-8eeb-4545-8531-555deb3c7399" />
+
 
 see the results
 
-![image](https://github.com/user-attachments/assets/adb4c7f2-70d5-4a85-903a-2d64e0ef5cbb)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/a8e59901-9660-4d20-bf87-d155bc032c32" />
+
 
 here Code coverage is 
 
 Coverage
 82.7%
 
-![image](https://github.com/user-attachments/assets/f5954fe3-2c85-4283-a736-0bc58308687d)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/0b040b6c-06ce-4073-8afd-74eb7e4a7046" />
+
 
 NOTE:: Coverage is greater than or equal to 80.0%, this should be maintained minimum % every project
 
@@ -3829,62 +3949,85 @@ Create My own Quality Gates::
 
 Go to Dashboard click on Quality Gates
 
-![image](https://github.com/user-attachments/assets/b7e1b1c1-e25e-4bf4-acb2-7d3f386df80c)
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/810db00e-fa99-47a2-8ee4-3a5901adfdd1" />
+
 
 at left side we can see create & just click on it
 
-![image](https://github.com/user-attachments/assets/b203f151-0ab2-4de3-84f8-a262f462a9c5)
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/e376671e-2228-435a-8765-288978270066" />
+
 
 
 Provide the Name & Click Create
 
 
-![image](https://github.com/user-attachments/assets/a008a297-54ef-49b3-b5bf-a7df05d19c96)
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/8206d4e2-de26-4192-a7f6-0589fdf804ab" />
+
 
 
 Your own quality gates are created
 
-![image](https://github.com/user-attachments/assets/f46d3c2a-dfa7-408b-a30d-5d1688de1891)
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/424db715-3699-4ce8-973a-e0f89263db00" />
+
 
 this is your own quality gates
 
-![image](https://github.com/user-attachments/assets/dab980c2-3767-4d6b-867a-03b423593323)
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/73282057-4963-45e4-af8b-5d5d9eb57587" />
+
 
 nditions on New Code
+
 Metric
+
 Operator
+
 Value
+
 Issues
+
 is greater than
+
 0
+
 Security Hotspots Reviewed
+
 is less than
+
 100%
+
 Coverage
+
 is less than
+
 80.0%
 
 
 Duplicated Lines (%)
+
 is greater than
 
 
 select your project
 
-![image](https://github.com/user-attachments/assets/3f0aed8a-ebd7-4a27-8e13-4b7bbac978e1)
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/8bcc158c-e0cc-4a96-a67b-f35b72fa2fc2" />
+
 
 apply the Grant permissions to a user or a group
 
-![image](https://github.com/user-attachments/assets/a098832f-e4eb-476d-9cbf-e9bbd0a356c5)
 
 
 Apply all the permissions & click Add
 
-![image](https://github.com/user-attachments/assets/77ce722c-f751-4a9f-844f-edeb677ccb01)
 
-![image](https://github.com/user-attachments/assets/48485193-39d4-4e32-a7cb-c943d0d00ed6)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d4b37339-5fa7-4af7-81eb-4ef8840c817e" />
 
-![image](https://github.com/user-attachments/assets/0b988e9d-df3a-4118-98b8-f4b0cd6e3262)
 
 
 Create my own Quality Profile::
@@ -3893,59 +4036,85 @@ Create my own Quality Profile::
 go to Quality Profiles
 
 
-![image](https://github.com/user-attachments/assets/9f3c55e8-566a-4f48-8dff-1e473ab0aee0)
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/592f6bd4-3787-4495-8947-84dd2a253699" />
+
 
 select Language
 
-![image](https://github.com/user-attachments/assets/44cc17f2-03f4-4ea0-83ff-8d97a36e1f2b)
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d43cdd8e-4f68-48b0-87e1-e38371d70924" />
+
 
 total java Rules 527
 
-![image](https://github.com/user-attachments/assets/40ff10ed-e1cf-4ccf-bd80-f9ff509a6ae4)
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/e65055fb-3d0c-46be-9d2b-e148c5eb2be7" />
+
 
 
 at right saide top click create
 
-![image](https://github.com/user-attachments/assets/e786de8b-915f-466c-904f-7453eab9efab)
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/ac9ca09a-5547-4ae8-af74-ab27dd516bfc" />
+
 
 provide the Language & Name and click Create
 
-![image](https://github.com/user-attachments/assets/1a2aaba8-1855-4f13-859e-3cc0b5f0367f)
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/699b7e09-dd18-47c3-9a13-7f4232ad5c63" />
+
 
 
 your own profile
 
-![image](https://github.com/user-attachments/assets/12c55b42-aa02-46c9-a31d-60b46d682e7e)
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/726b58bc-9afd-4506-a607-e8e55630d0b7" />
+
 
 click Active More rules
 
-![image](https://github.com/user-attachments/assets/d9f3dde5-92cd-466f-9d68-b4bbaae336d5)
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/a8ba1bab-ffde-4409-834c-607412d02364" />
+
 
 Bulk Change
 
-![image](https://github.com/user-attachments/assets/8e927220-c993-4b8f-8ca7-6d9884aa41c4)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/e3101dd4-aea3-4c0d-ad17-703f8ae719a2" />
+
 
 Activate In Spring-pipeline project
 
-![image](https://github.com/user-attachments/assets/55e0b2e6-7c53-4b98-b2ce-87f75f935246)
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/614c1a25-e49f-4491-b99f-aa3f7feda5dc" />
+
 
 Sure Apply
 
-![image](https://github.com/user-attachments/assets/637731b5-bcbe-4798-b87b-ca808f39f2c1)
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/f68066fc-20fe-44d8-9f53-c8bf7494be42" />
+
 
 Succcessfully Applied my own quality profile rules
 
-Activate In Quality Profile (683 rules)
+Activate In Quality Profile (680 rules)
 
-![image](https://github.com/user-attachments/assets/b530b33a-c75f-470e-9118-e0d49bcbfb96)
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/40afb4d6-86be-46ef-8c8a-74ef26812e17" />
+
 
 Now we are successfully onboarded spring-petclininc project to Sonarqube server
 
-![image](https://github.com/user-attachments/assets/1d8bbf77-c70d-479a-8057-ff62984f23f7)
 
-![image](https://github.com/user-attachments/assets/0c1ea5e5-fd03-46b3-aa51-0f283095ffa8)
 
-![image](https://github.com/user-attachments/assets/45b7263c-0e82-45ff-b06f-915a2af9b464)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/304cc022-c9c3-4af6-a98f-0970ab7b999e" />
+
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d562ceec-487e-4d65-8e47-a5589dbccb77" />
+
 
 
 Running the Pipeline Once the pipeline is configured, Jenkins will execute the SonarQube analysis during the build process. After the build completes, you can view the analysis results in your SonarQube dashboard.
