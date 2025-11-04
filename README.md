@@ -4125,3 +4125,56 @@ Code coverage Code smells Bugs Vulnerabilities Duplications These reports will b
 
 
 
+03/11/2025::
+==============
+
+
+Jfrog Artifactory Overview::
+========================
+
+
+JFrog Artifactory is a universal artifact repository manager that serves as a central hub for storing, managing, and distributing software artifacts, binaries, packages, and other assets throughout the software development lifecycle, improving automation, and ensuring release integrity.
+
+
+<img width="1800" height="766" alt="image" src="https://github.com/user-attachments/assets/2bee7980-3399-405a-9676-481a0760fe9d" />
+
+
+Artifact Repository Management:
+
+Allows for storing binaries and artifacts (e.g., libraries, packages, Docker images) in a centralized location.
+Supports all major package types (e.g., Maven, Gradle, npm, NuGet, RubyGems, etc.).
+Version Control:
+
+Helps in managing versions of your artifacts and ensures the correct version is used during builds and deployments.
+Integration with CI/CD:
+
+Integrates seamlessly with CI/CD tools like Jenkins, Bamboo, GitLab CI, and others.
+Enables automated publishing of artifacts as part of your continuous integration pipeline.
+Access Control & Security:
+
+Provides fine-grained access control and permissions for users and groups.
+Supports user authentication, security, and audit trails to ensure compliance and secure artifact management.
+Replication:
+
+Allows you to replicate artifacts across multiple Artifactory instances, ensuring high availability and disaster recovery capabilities.
+Remote Repositories:
+
+Artifactory can proxy remote repositories, allowing you to cache and fetch external dependencies without re-downloading them each time.
+Promotion & Release Management:
+
+You can "promote" artifacts from one repository to another (e.g., from a development repository to a production repository), allowing for better control over releases.
+Multi-Platform Support:
+
+Artifactory supports multiple programming languages and platforms, making it a universal solution for managing software dependencies and releases.
+
+AWS (Amazon Web Services)::
+========================
+
+Create AWS Free tier Account::
+====================================
+Please go throw the recorded video session and follow the steps to create the free tier AWS account.Let me know if anyone facing any issues.
+
+Amazon Web Services (AWS) is a comprehensive and widely adopted cloud platform offered by Amazon. It provides a broad set of services to help organizations and individuals build and scale applications, manage data, and process workloads in the cloud. AWS is designed to provide flexible, scalable, and cost-effective solutions for computing, storage, networking, machine learning, and much more.
+
+
+
