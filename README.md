@@ -4178,3 +4178,91 @@ Amazon Web Services (AWS) is a comprehensive and widely adopted cloud platform o
 
 
 
+Step-by-Step: Create an AWS Free Tier Account
+
+
+Go to the AWS Free Tier page
+
+👉 https://aws.amazon.com/free
+
+
+Click “Create a Free Account”
+
+This takes you to the AWS sign-up page.
+
+
+Enter your email and choose a password
+
+
+Email address (must be unique, not tied to an existing AWS account)
+
+
+Strong password
+
+
+AWS account name (any name you choose)
+
+
+
+
+Verify your email
+
+
+AWS sends a verification code to your email.
+
+
+Enter that code on the site to continue.
+
+
+
+
+Choose the account type
+
+
+Personal (for individuals)
+
+
+Professional (for company use)
+
+
+
+
+Enter your contact and payment info
+
+
+Full name, address, and phone number.
+
+
+Credit/debit card details (for identity check; AWS may make a temporary $1 charge).
+
+
+
+
+Phone verification
+
+
+Choose “Text message” or “Voice call.”
+
+
+Enter the code AWS sends to confirm your number.
+
+
+
+
+Select a Support Plan
+
+
+Choose the Basic Support – Free option.
+
+
+
+
+Sign in to the AWS Management Console
+
+
+Go to https://console.aws.amazon.com
+
+
+Log in using your email and password.
+
+
