@@ -4266,3 +4266,342 @@ Go to https://console.aws.amazon.com
 Log in using your email and password.
 
 
+
+04/11/2025::
+==============
+
+
+Integrate Jfrog with Jenkins::
+=================================
+
+
+<img width="1800" height="766" alt="image" src="https://github.com/user-attachments/assets/a6931951-8047-4ac8-8a93-7886e2be2d6b" />
+
+
+First Step:: 
+https://jfrog.com/download-jfrog-platform/  ---download url
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/f694c6a3-7536-4ee7-a329-a0b93619398d" />
+
+
+previous versions link
+
+https://jfrog.com/download-legacy/?product=artifactory&version=7.104.12
+
+All zip version and search 6.12.1 OSS version
+
+https://releases.jfrog.io/artifactory/bintray-artifactory/
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/e93e14fa-031d-4e66-8633-3e42028994bb" />
+
+
+
+jdk compatibility version with jfrog is::
+=============================================
+ 
+JDK 12.1.0
+ 
+https://www.oracle.com/in/java/technologies/javase/jdk12-archive-downloads.html
+ 
+artifactory-oss-6.12.1
+ 
+All zip version and search 6.12.1 OSS version
+ 
+https://releases.jfrog.io/artifactory/bintray-artifactory/
+
+
+Jfrog Script::
+===============
+
+stage ('Artifactory Server'){
+            steps {
+               rtServer (
+                 id: "Artifactory",
+                 url: 'http://localhost:8081/artifactory',
+                 username: 'admin',
+                  password: 'password',
+                  bypassProxy: true,
+                   timeout: 300
+                        )
+            }
+        }
+        stage('Upload'){
+            steps{
+                rtUpload (
+                 serverId:"Artifactory" ,
+                  spec: '''{
+                   "files": [
+                      {
+                      "pattern": "*.war",
+                      "target": "srinfotech-batch4"
+                      }
+                            ]
+                           }''',
+                        )
+            }
+        }
+        stage ('Publish build info') {
+            steps {
+                rtPublishBuildInfo (
+                    serverId: "Artifactory"
+                )
+            }
+        }
+
+
+installed plugin for artifactory plugin (Jfrog)::
+ ==========================================
+
+Please install below Artifactory plugin in Jenkins
+
+Artifactory Plugin  Version4.0.8
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/2c80456a-0059-40ba-9336-3e650698582d" />
+
+
+
+After installed Artifactory plugin 
+
+Go to Manage Jenkins--> System configuration find JFROG
+
+
+ <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/2f99ff52-e8cc-4be4-ad5f-83a9ae3a1ae7" />
+
+
+Click JFrog Platform Instances
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/e3b375cb-09ac-4386-83af-e36a29fdff72" />
+
+
+Server ID::
+
+Artifactory
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/3e9a5f12-18d2-4f31-982a-ceec4ba19164" />
+
+
+JFrog Platform URL::
+
+http://localhost:8081/artifactory
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/bc977212-b557-43e0-92d0-3a0b000b06fd" />
+
+
+Credentials::
+
+
+For user name and password
+
+
+Default Jfrog U/P----admin/password
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/da3bab2c-459b-4e57-9fbe-be35d3dfde28" />
+
+
+
+Allow HTTP Connections:: should be checked 
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/b04be3f8-5a89-4167-8775-83b0999bae71" />
+
+
+
+I need to setup target in Jfrog::
+==================================
+
+srinfotech-batch4
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/c0717c8e-62a4-4718-8aca-440ab48341d8" />
+
+
+click Local repository
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/38c881aa-d9aa-46e1-83db-ec9a169c52ad" />
+
+
+Select maven
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/71ab8e03-d055-4cd6-8174-6e17a4543c6a" />
+
+
+Repository key  :::: srinfotech-batch4
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/6e1bf2a6-0fd8-49a2-b7b4-c3c70b9e716b" />
+
+
+Click save and finish
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/41e78a2e-2977-46ae-8b1c-27b9ad262e60" />
+
+
+
+Go to artifacts and check repository is created with name -srinfotech-batch4
+
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/a9cf1395-7fc7-4097-a1eb-ee28a566f8df" />
+
+
+
+CI/CD all tools ans stages script:: create new job in jenkins and execute below script 
+====================================================================================
+
+
+pipeline{
+
+agent any
+ 
+tools{
+ 
+    maven 'Maven'
+}
+ 
+stages{
+  
+    stage('Clone The Project'){
+        
+        steps{
+           
+            git branch: 'feature/2025.10.28', url: 'https://github.com/srinfotechbatch4/Petclinic.git'
+        }
+    }
+    stage('Build'){
+        
+        steps{
+             bat 'mvn clean install'
+        }
+    }
+     stage('Test'){
+       
+        steps{
+             bat 'mvn test'
+        }
+    }
+     stage('Generated the test reports'){
+        
+        steps{
+             junit 'target/surefire-reports/*.xml'
+        }
+    }
+     stage('published the Artifacts'){
+        
+        steps{
+            archiveArtifacts artifacts: 'target/*.war', followSymlinks: false
+        }
+    }
+ 
+    stage('SonarQube Analysis'){
+        steps{
+        bat 'mvn package'
+      bat '''mvn sonar:sonar \
+ 
+  -Dsonar.projectKey=spring-petclinic \
+ 
+  -Dsonar.projectName='spring-petclinic' \
+ 
+  -Dsonar.host.url=http://localhost:9000 \
+ 
+  -Dsonar.token=sqp_b4f05b06814df65b8d3f1a467f3ed604e2dadb03'''
+        }
+    }
+ 
+stage ('Artifactory Server'){
+
+            steps {
+            
+               rtServer (
+               
+                 id: "Artifactory",
+                 
+                 url: 'http://localhost:8081/artifactory',
+                 
+                 username: 'admin',
+                 
+                  password: 'password',
+                  
+                  bypassProxy: true,
+                  
+                   timeout: 300
+                   
+                        )
+            }
+            
+        }
+        stage('Upload'){
+        
+            steps{
+            
+                rtUpload (
+                
+                 serverId:"Artifactory" ,
+                 
+                  spec: '''{
+                  
+                   "files": [
+                   
+                      {
+                      
+                      "pattern": "*.war",
+                      
+                      "target": "srinfotech-batch4"
+                      
+                      }
+                      
+                            ]
+                            
+                           }''',
+                           
+                        )
+            }
+            
+        }
+        stage ('Publish build info') {
+        
+            steps {
+            
+                rtPublishBuildInfo (
+                
+                    serverId: "Artifactory"
+                )
+                
+            }
+            
+        }
+ 
+ 
+    
+    stage('Deploy to Tomcat Server'){
+    
+        steps{
+        
+            deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: 'tomcatcredential', path: '', url: 'http://localhost:8080')], contextPath: 'SRInfotechSpringpetclinicJfrog', war: 'target/*.war'
+        }
+
+        
+    }
+    
+}
+
+}
+
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/427cdbd3-ef3b-493a-b97c-fe9b432fd870" />
+
+
+Successfully Published the Artifact to Jfrog Artifactory 
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/126066df-fae0-402b-98cd-1bd74996eea2" />
+
