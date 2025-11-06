@@ -1,5 +1,3 @@
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/1443ed01-1447-4535-995f-8f41d3abf31a" /># SRInfoTechAWSDevOpsTrainingNote
-
 
 30/09/2025_Demo::
 ================
