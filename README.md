@@ -1,4 +1,4 @@
-# SRInfoTechAWSDevOpsTrainingNote
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/1443ed01-1447-4535-995f-8f41d3abf31a" /># SRInfoTechAWSDevOpsTrainingNote
 
 
 30/09/2025_Demo::
@@ -4312,29 +4312,79 @@ All zip version and search 6.12.1 OSS version
 https://releases.jfrog.io/artifactory/bintray-artifactory/
 
 
+Start Jfrog::
+==============
+
+Go to downloaded the Jfrog And UNZIP the file
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/7591ffda-52a2-40e4-b88f-caf0cd23f6e3" />
+
+
+Go to bin folder
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/5f7f2be2-5a27-42da-bab8-e4782721560a" />
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/53d5d275-c25d-4629-8dcd-93bfbf87b00e" />
+
+You should be found the artifactory.bat
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/2b868a0f-94c5-4b4a-a0b0-d963e8654c19" />
+
+select the  path and navigate to cmd (command line interface)
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4e298ab3-c875-4be5-85e9-4026d05af6e2" />
+
+run the jfrog
+
+artifactory.bat
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/37ac18aa-f2f8-42e3-90ba-55e749806f66" />
+
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/06c69910-fb20-4199-a439-1e18b06a8419" />
+
+
 Jfrog Script::
 ===============
 
 stage ('Artifactory Server'){
+           
             steps {
+               
                rtServer (
+               
                  id: "Artifactory",
+                
                  url: 'http://localhost:8081/artifactory',
+               
                  username: 'admin',
+               
                   password: 'password',
+                
                   bypassProxy: true,
                    timeout: 300
                         )
             }
         }
         stage('Upload'){
+           
             steps{
+               
                 rtUpload (
+               
                  serverId:"Artifactory" ,
+                 
                   spec: '''{
+                 
                    "files": [
+                    
                       {
+                   
                       "pattern": "*.war",
+                   
                       "target": "srinfotech-batch4"
                       }
                             ]
@@ -4343,8 +4393,11 @@ stage ('Artifactory Server'){
             }
         }
         stage ('Publish build info') {
+           
             steps {
+               
                 rtPublishBuildInfo (
+                  
                     serverId: "Artifactory"
                 )
             }
