@@ -4713,3 +4713,126 @@ Developer Tools::
 AWS CodeCommit: Source control service for managing your code repositories.
 AWS CodeDeploy: Automates code deployments to EC2 instances and Lambda.
 AWS CodePipeline: Continuous integration and continuous delivery (CI/CD) service for automating the release pipeline.
+
+
+07/11/2025::
+==============
+
+AWS EC2 ::
+===========
+
+Amazon Elastic Compute Cloud (Amazon EC2) is one of the core services provided by Amazon Web Services (AWS)
+
+Wide Variety of Instance Types:
+
+EC2 instances are grouped into families based on the type of workload they are optimized for. Some common instance families include:
+
+General Purpose: e.g., t3, m5 instances (balanced CPU, memory, and networking).
+
+Compute Optimized: e.g., c5 instances (great for high-performance computing tasks).
+
+Memory Optimized: e.g., r5, x1e instances (designed for high-memory workloads like databases).
+
+
+Master & Node communication Via SSH keys::
+============================================
+
+
+
+<img width="1720" height="771" alt="image" src="https://github.com/user-attachments/assets/302c319f-5a53-4179-89fc-26d1d05d9a83" />
+
+
+
+create EC2 Ubuntu Linux Machine in AWS::
+==================================
+
+Go to AWS and Search EC2
+
+
+https://aws.amazon.com/console/
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/b74d26eb-e006-4a8c-bdd1-c6ad61a5317c" />
+
+
+Sign in to console
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/127fa406-6cb4-4531-bf35-21e4d8b0fd45" />
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4d5b19c0-19de-4328-b0df-05d959f5bd38" />
+
+
+Sign in using root user email
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/54dd429a-9645-4694-b672-e0f09c08e9fb" />
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/62f78211-1898-4291-ab4c-140d3d543af5" />
+
+Click EC2
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/7d3db337-a36a-403c-8d61-0924ef82fa41" />
+
+
+Go to instances at left side bar
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/42d33ae6-1b84-4934-bc5b-df0122473433" />
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/7197ab92-5618-4872-9d3d-988d7d468d43" />
+
+
+
+Click Launch Instances, EC2  ---> Instances  -----> Launch an instance
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/2e7cb8fb-a19f-4329-832b-7e2a9df13b16" />
+
+
+Select Ubuntu
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/be45dcf1-7819-4f7c-bbeb-520eb9c6c7c4" />
+
+
+Select Amazon Machine Image (AMI)
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/de98facb-13b6-497e-af1e-940a4c3c473a" />
+
+
+
+select Instance type,t2 medium
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/74b8b230-3e56-45d6-b2bf-31161447265b" />
+
+
+
+Create new key pair and provide key pair name
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/bbcf96b5-15de-4242-b582-e323c915c077" />
+
+
+click create pair
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/05a3b15d-577e-49cc-a256-df090e685fe3" />
+
+
+click launch instance
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d13215e0-a952-46b4-9eb2-ed0d4636e29d" />
+
+
+instance will be created
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d8335ca6-e57c-4b23-8a4d-cd6271d85f63" />
+
+
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/ae686a03-6233-4a68-88ea-688b513a4eac" />
+
+
