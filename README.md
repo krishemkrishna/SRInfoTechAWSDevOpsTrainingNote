@@ -4949,3 +4949,31 @@ Veriy the variables was set correctly
 >echo $JAVA_HOME
 
 >echo $MAVEN_HOME
+
+
+Class Note::
+=============
+
+after installed jdk17 & Maven you should be setup the environemnt variabels in ubuntu
+ 
+ 
+ >sudo vi /etc/environment
+ 
+ 1.press i from your keyboard
+
+ 2.press esc from your keyboard
+ 
+ 3.swift+:
+
+ 4.wq
+
+ 5.press enter from your keyboard
+ 
+ Maven home: /usr/share/maven
+ 
+ java home:: /usr/lib/jvm/java-17-openjdk-amd64
+ 
+ 
+JAVA_HOME="/usr/lib/jvm/java-17-openjdk-amd64"
+
+MAVEN_HOME="/usr/share/maven"
