@@ -4836,3 +4836,116 @@ instance will be created
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/ae686a03-6233-4a68-88ea-688b513a4eac" />
 
 
+
+2 Ubuntu Machines Running Success
+
+1.Master
+
+2.Node
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/22d8560e-5e72-4b48-933e-c4e618779b9c" />
+
+
+
+Master & Node communication Via SSH keys::
+================================
+
+i have to create 2 EC2 ubuntu machines in AWS
+
+1. Jenkinsmaster
+
+2. Node
+
+
+
+
+<img width="1478" height="720" alt="image" src="https://github.com/user-attachments/assets/c2d9271e-ef7e-4795-a337-3a4652b49527" />
+
+
+we have already .pem file dowloaded in you local machin
+
+right click from .pem and click Open git bash here option
+
+Now Go to AWS Ubuntu machine which is already created in AWS insatnces and select master machine
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/69c4bd3c-fb96-4e34-93ce-bb3ab176f5e4" />
+
+
+Click Connect
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/608b56e0-275b-4854-a135-2f54886dd0ea" />
+
+
+Click SSH Client
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/5cf59bd9-ec79-446c-96eb-e36e05c17a2a" />
+
+
+Copy URL
+
+>ssh -i "Batch4.pem" ubuntu@ec2-18-237-178-192.us-west-2.compute.amazonaws.com
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/e5cd3cef-ad51-4604-8e02-b74981dec51c" />
+
+
+Now past that url in Gitbash
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/327cb240-6f1f-4b6a-8db5-718510aab388" />
+
+
+switch to root user below command run
+
+>Sudo -i
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/47049e39-538e-4a1e-8810-36c90abbed3b" />
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/51bd5a55-81ce-4fff-84df-f8ad2e20fedb" />
+
+
+update the all packages ,please run below command
+
+>sudo apt-get update
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/c5486332-2033-4550-a134-c556657debfc" />
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/3b76e193-7495-4fb8-9cce-37f2a6732f16" />
+
+
+Install JDK & Maven:;
+============
+
+JDK link
+
+https://bluevps.com/blog/how-to-install-java-on-ubuntu
+
+MAven link
+
+https://phoenixnap.com/kb/install-maven-on-ubuntu
+
+
+
+>sudo apt-get install maven
+
+>java -version
+
+>mvn -v
+
+Set java home environment 
+
+>sudo vi /etc/environment
+
+JAVA_HOME=”/usr/lib/jvm/java-8-openjdk-amd64/jre”
+
+MAVEN_HOME=”/usr/share/maven”
+
+Reload your system environment
+
+>source /etc/environment
+
+Veriy the variables was set correctly
+
+>echo $JAVA_HOME
+
+>echo $MAVEN_HOME
