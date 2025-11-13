@@ -5453,3 +5453,16 @@ node ALL-(AAL:ALL) NOPASSWD:ALL
 e. passwordauthentication should be enabled
 
 if keys are copied correctly commenucation will be happend 
+
+
+
+
+12/11/2025::
+============
+
+
+Ansible:: Configuration Mamagement Tool(CM)::
+==============================================
+
+
+<img width="1665" height="749" alt="image" src="https://github.com/user-attachments/assets/c41bdfd2-1a7d-4370-8888-2af0c888f7b6" />
