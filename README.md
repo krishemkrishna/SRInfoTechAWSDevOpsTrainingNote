@@ -5464,5 +5464,176 @@ if keys are copied correctly commenucation will be happend
 Ansible:: Configuration Mamagement Tool(CM)::
 ==============================================
 
+Ansible is an open-source automation tool used for configuration management, application deployment, task automation, and multi-node orchestration. It helps system administrators and DevOps professionals automate IT processes to improve efficiency, reduce errors, and simplify complex workflows.
+
 
 <img width="1665" height="749" alt="image" src="https://github.com/user-attachments/assets/c41bdfd2-1a7d-4370-8888-2af0c888f7b6" />
+
+
+
+
+13/11/2025::
+============
+
+
+
+Key Features of Ansible:
+================
+Agentless: Ansible doesn't require any agents to be installed on the target machines. It uses SSH (or WinRM for Windows systems) to communicate with remote nodes.
+
+Declarative Syntax: Ansible uses YAML (Yet Another Markup Language) to define the tasks, which makes it easy to read and write.
+
+Idempotent: Ansible ensures that running the same playbook multiple times has the same effect, meaning it won’t reapply configurations if they’ve already been applied correctly.
+
+Modular: Ansible has a large number of pre-built modules that can be used to manage various systems, applications, and services.
+
+Playbooks: These are YAML files that describe the automation tasks you want to run. Playbooks are the heart of Ansible automation and define the "what" and "how" of your automation tasks.
+
+Inventory Management: Ansible can manage an inventory of systems, which is used to organize and target different sets of machines.
+
+Basic Components:
+==================
+Inventory: A list of hosts (machines) that Ansible will manage.
+
+Playbook: A YAML file that defines the tasks and roles to be applied to the inventory.
+
+Roles: A way to group related tasks and files together in a reusable manner.
+
+Modules: Pre-built commands that Ansible can run on target systems to accomplish specific tasks (e.g., file management, system configuration, etc.).
+
+3 linux ubuntu machines
+
+AWS_Ubuntu 24
+
+1)	AWS free tier
+
+a)ACS   ----Ansible control server
+
+b)Node1
+
+c)Node2
+
+
+all these 3 machine ping to each other
+
+
+
+
+Ansible Control Server(ACS):: steps
+============================
+
+<img width="292" height="244" alt="image" src="https://github.com/user-attachments/assets/4121fe3b-97b2-43bd-ac04-afa213b14d36" />
+
+
+Ansible Install LInk
+
+https://www.cherryservers.com/blog/install-ansible-ubuntu-24-04
+
+
+ACS::ansible control server
+===========================
+
+Please follow the below steps to setup ACS
+
+1.install ansible
+
+2. passwordauthentication enabled
+
+3. create new user --->adduser ansible
+
+4. user should provide the sudo permission
+
+5. Generate the private & public keys --> ssh-keygen -t ed25519  
+
+6.copy the public/private keys to Node machines
+
+if keys are copied correctly commenucation will be happend 
+
+NOTE1 setup::steps
+==========
+
+Please follow the below steps to setup ACS
+
+1.install python
+
+2. passwordauthentication enabled
+
+3. create new user --->adduser node1
+
+4. user should provide the sudo permission
+
+NODE2 Setup::steps
+=========================
+
+Please follow the below steps to setup ACS
+
+1.install python
+
+2. passwordauthentication enabled
+
+3. create new user --->adduser node2
+
+4. user should provide the sudo permission
+
+<img width="286" height="372" alt="image" src="https://github.com/user-attachments/assets/284d66db-b34b-4df0-bee4-3abc2ed651b8" />
+
+we can search in google ansible playbook
+https://docs.ansible.com/ansible/latest/user_guide/playbooks.html
+
+https://docs.ansible.com/ansible/latest/user_guide/playbooks_intro.html#basics
+
+Python Install link::
+
+https://docs.vultr.com/how-to-install-python-and-pip-on-ubuntu-24-04
+
+
+Steps::
+======
+ubuntu@ip-172-31-28-207:~$ sudo -i
+
+root@ip-172-31-28-207:~# su ansible
+
+ansible@ip-172-31-28-207:/root$ cd ~
+
+ansible@ip-172-31-28-207:~$ cd /etc/ansible/
+
+ansible@ip-172-31-28-207:/etc/ansible$ ansible -m ping all
+
+[WARNING]: Platform linux on host localhost is using the discovered Python interpreter at /usr/bin/python3.12, but future installation of
+
+another Python interpreter could change the meaning of that path. See https://docs.ansible.com/ansible-
+core/2.17/reference_appendices/interpreter_discovery.html for more information.
+
+localhost | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3.12"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+[WARNING]: Platform linux on host ansiblenode2@172.31.30.200 is using the discovered Python interpreter at /usr/bin/python3.12, but future
+installation of another Python interpreter could change the meaning of that path. See https://docs.ansible.com/ansible-
+core/2.17/reference_appendices/interpreter_discovery.html for more information.
+
+ansiblenode2@172.31.30.200 | SUCCESS => {
+  
+	"ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3.12"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+[WARNING]: Platform linux on host ansiblenode1@172.31.20.135 is using the discovered Python interpreter at /usr/bin/python3.12, but future
+installation of another Python interpreter could change the meaning of that path. See https://docs.ansible.com/ansible-
+core/2.17/reference_appendices/interpreter_discovery.html for more information.
+
+ansiblenode1@172.31.20.135 | SUCCESS => {
+   
+	"ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3.12"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+ansible@ip-172-31-28-207:/etc/ansible$
+
