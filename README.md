@@ -5637,3 +5637,229 @@ ansiblenode1@172.31.20.135 | SUCCESS => {
 }
 ansible@ip-172-31-28-207:/etc/ansible$
 
+
+all these 3 machine ping to each other and see beow screenshots all 3 machines pings each other
+
+14/11/2025::
+============
+
+
+Structure of a Basic Playbook:::
+===============================
+
+A basic playbook has the following components:
+
+YAML Header: The file begins with a --- to indicate it’s a YAML file.
+
+the hosts (target machines) become: yes ----->Sudo user
+
+Tasks: Tasks define the actions to be executed on the target systems.
+
+I want to see where the Ansible is installed on ACS::
+===================================================
+
+>cd /etc/ansible
+
+NOTE::
+======
+
+Playbook is written in YAML format
+
+Inside the playbook tasks
+
+Each task is a module
+
+Playbook is a one of yaml file
+
+Yaml file is a collection of key-value pairsset of all tasks
+
+Playbook is tell to the ansible what are the tasks can be performed
+
+Each task is a one module
+
+Module is a smallest item of ansible
+
+Module can be used to individual or smallest task can be performed
+
+Any configuration management tool should maintain ‘state’
+
+hosts: all (apply all we can be mentioned in inventory )
+
+become: yes (become user as a sudo user)
+
+tasks:
+
+we can search in google ansible playbook
+
+https://docs.ansible.com/ansible/latest/user_guide/playbooks.html
+
+https://docs.ansible.com/ansible/latest/user_guide/playbooks_intro.html#basics
+
+
+
+install git example playbook::
+==============================
+
+---
+- hosts: all
+
+  become: yes
+  
+  tasks:
+  
+  -  name: install git
+    
+     apt:
+     
+       name: git
+     
+       state: present
+     
+       update_cache: yes
+
+     
+note:::default state is present 
+update_cache: yes tells Ansible to run the apt-get update command on the remote machine before performing any further package operations (like installing or upgrading packages).
+become: yes  # Elevate privileges to execute tasks as root
+
+java install playbook::
+https://www.geeksforgeeks.org/how-to-install-java-using-ansible-playbook/
+
+
+
+
+java and git install playbook::
+---
+- hosts: all
+  
+  become: yes
+  
+  tasks:
+  
+  -  name: install git
+    
+     apt:
+     
+       name: git
+     
+       state: present
+     
+       update_cache: yes
+
+  -  name: Install Java
+    
+     apt:
+     
+       name: openjdk-17-jdk
+     
+       state: present
+
+>sudo vi demo.yml
+
+copy git playbook code to demo.yml
+
+---
+- hosts: all
+  
+  become: yes
+  
+  tasks:
+  
+  -  name: install git
+    
+     apt:
+     
+       name: git
+     
+       state: present
+     
+       update_cache: yes
+
+     
+
+Run the playbook::
+===============
+
+>ansible-planbook <playbookname>
+
+>ansible-playbook demo.yml
+
+![image](https://github.com/user-attachments/assets/9bc02cd9-6749-4a09-a7d3-218110fd00d1)
+
+ansible@ip-172-31-28-207:/etc/ansible$ ansible-playbook demo.yml
+
+![image](https://github.com/user-attachments/assets/7df9edfc-af27-4815-b340-482237dfc368)
+
+
+PLAY [all] **************************************************************************************************************************************
+
+TASK [Gathering Facts] **************************************************************************************************************************
+[WARNING]: Platform linux on host localhost is using the discovered Python interpreter at /usr/bin/python3.12, but future installation of
+another Python interpreter could change the meaning of that path. See https://docs.ansible.com/ansible-
+core/2.17/reference_appendices/interpreter_discovery.html for more information.
+ok: [localhost]
+[WARNING]: Platform linux on host ansiblenode2@172.31.30.200 is using the discovered Python interpreter at /usr/bin/python3.12, but future
+installation of another Python interpreter could change the meaning of that path. See https://docs.ansible.com/ansible-
+core/2.17/reference_appendices/interpreter_discovery.html for more information.
+ok: [ansiblenode2@172.31.30.200]
+[WARNING]: Platform linux on host ansiblenode1@172.31.20.135 is using the discovered Python interpreter at /usr/bin/python3.12, but future
+installation of another Python interpreter could change the meaning of that path. See https://docs.ansible.com/ansible-
+core/2.17/reference_appendices/interpreter_discovery.html for more information.
+ok: [ansiblenode1@172.31.20.135]
+
+TASK [install git] ******************************************************************************************************************************
+ok: [localhost]
+ok: [ansiblenode1@172.31.20.135]
+ok: [ansiblenode2@172.31.30.200]
+
+PLAY RECAP **************************************************************************************************************************************
+ansiblenode1@172.31.20.135 : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+ansiblenode2@172.31.30.200 : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+localhost                  : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+ansible@ip-172-31-28-207:/etc/ansible$
+
+
+install git and jdk17 insatlled playbook::
+======================================
+
+---
+- hosts: localhost
+  
+  become: yes
+  
+  tasks:
+  
+  -  name: install git
+    
+     apt:
+     
+       name: git
+     
+       state: present
+     
+       update_cache: yes
+     
+  -   name: Install Java jdk17 on ubuntu machine
+ 
+      apt:
+      
+        name: openjdk-8-jdk
+      
+        state: absent
+      
+        update_cache: yes
+
+Usefull Google links::
+===========
+
+https://docs.ansible.com/ansible/2.9/modules/list_of_all_modules.html
+
+https://docs.ansible.com/ansible/2.9/modules/apt_module.html#parameters
+
+https://www.geeksforgeeks.org/how-to-install-java-using-ansible-playbook/
+
+https://www.yamllint.com/
+
+https://www.geeksforgeeks.org/how-to-install-tomcat-using-ansible-playbook/
+
