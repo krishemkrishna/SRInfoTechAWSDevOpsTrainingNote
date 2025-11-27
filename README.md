@@ -5936,19 +5936,29 @@ I want to create my own inventory
 
 >Cd /etc/ansible
 
-![image](https://github.com/user-attachments/assets/e03cd989-34e8-46f5-88d0-9af56f11b6d9)
+>sudo mkdir SRINFOTECH
 
-![image](https://github.com/user-attachments/assets/7a4d1993-1c1e-4da6-94b0-eeb105cb0d36)
+>cd /etc/ansible/SRINFOTECH
 
-![image](https://github.com/user-attachments/assets/79f8fb33-19d1-47a9-b26e-aff30d75d408)
+>sudo vi srhosts
 
->cat /etc/ansible/hosts
 
-Sudo vi hosts
+Copy all the hosts with groups like below
 
-Copy all hosts
+[web_servers]
+node1@172.31.23.83
 
-![image](https://github.com/user-attachments/assets/bcda07ba-ab66-4b86-bf67-f7ad9c556230)
+[app_servers]
+node2@172.31.23.199
+ansible@172.31.24.75
+
+[DB_servers]
+
+node1@172.31.23.83
+node2@172.31.23.199
+ansible@172.31.24.75
+
+
 
 I want categories into Inventory groups::
 ===================================
@@ -5962,7 +5972,7 @@ An inventory group in Ansible is a way to group hosts based on a shared characte
 
 static inventory groups defined in the standard INI or YAML format.
 
-# Define groups of hosts:: >sudo vi hosts
+# Define groups of hosts:: >sudo vi srhosts
 
 [web_servers]
 node1@172.31.11.24
@@ -6016,15 +6026,15 @@ i want to insatll 3 spfwares :: below playbook name -----> installsoftware.yml
 
 once above two files created run the below command
 
->ansible-playbook -i hosts installsoftware.yml
+>ansible-playbook -i srhosts installsoftware.yml
      
 ![image](https://github.com/user-attachments/assets/36d33a9a-b113-402c-80f7-1e9c404a245b)
 
->ansible -i hosts -m ping Webserver
+>ansible -i srhosts -m ping Webserver
 
 Best practice is you need to create our own inventories
 
->sudo vi hosts
+>sudo vi srhosts
 
 after ran the above yaml, please try to access all machines with IPaddresss
 
