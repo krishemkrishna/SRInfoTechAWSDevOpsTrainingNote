@@ -5850,6 +5850,53 @@ install git and jdk17 insatlled playbook::
       
         update_cache: yes
 
+
+
+install git and jdk17 insatlled & Apache2 playbook::
+=================================================
+
+---
+
+- hosts: all
+
+  become: yes
+
+   tasks:
+
+   - name: install java
+  
+	apt:
+
+     name: openjdk-17-jdk
+
+        state: present
+
+        update_cache: yes
+   
+   - name: install git
+   
+	apt:
+      name: git
+
+     state: present  
+
+  - name: install tree software
+
+    apt:
+
+    name: tree
+
+     state: present 
+  - name: install apache2 software
+
+    apt:
+
+    name: apache2
+
+    state: present  
+
+
+
 Usefull Google links::
 ===========
 
@@ -5862,4 +5909,167 @@ https://www.geeksforgeeks.org/how-to-install-java-using-ansible-playbook/
 https://www.yamllint.com/
 
 https://www.geeksforgeeks.org/how-to-install-tomcat-using-ansible-playbook/
+
+
+
+26/11/2025::
+============
+
+
+Executing ansible in 2 ways
+1.	Adhoc command  yearly base
+2.	Playbook (YAML/YML) format use for repetitive work
+
+When we can use adhoc commands  ->I want restart servers yearly base 
+
+if you can use system inventory, below is the command
+>ansible-playbook <playbookname>
+>ansible-playbook hello-world.yml
+
+I don’t want to use system level inventory
+
+Inventory::
+==========
+where hosts/ipaddress are stored
+
+I want to create my own inventory
+
+>Cd /etc/ansible
+
+![image](https://github.com/user-attachments/assets/e03cd989-34e8-46f5-88d0-9af56f11b6d9)
+
+![image](https://github.com/user-attachments/assets/7a4d1993-1c1e-4da6-94b0-eeb105cb0d36)
+
+![image](https://github.com/user-attachments/assets/79f8fb33-19d1-47a9-b26e-aff30d75d408)
+
+>cat /etc/ansible/hosts
+
+Sudo vi hosts
+
+Copy all hosts
+
+![image](https://github.com/user-attachments/assets/bcda07ba-ab66-4b86-bf67-f7ad9c556230)
+
+I want categories into Inventory groups::
+===================================
+
+In Ansible, inventory groups are used to organize and categorize hosts (machines or servers) into logical groups. This allows you to apply tasks to specific sets of servers, simplifying playbook management and execution. An inventory is a list of managed hosts and their associated metadata, and groups are one of the key components of that structure.
+
+Here’s a detailed explanation of Ansible inventory groups
+
+1. What Are Inventory Groups?
+An inventory group in Ansible is a way to group hosts based on a shared characteristic. For example, you might have groups for different environments (e.g., dev, prod), different types of servers (e.g., web_servers, db_servers), or other logical categories that fit your needs.
+
+static inventory groups defined in the standard INI or YAML format.
+
+# Define groups of hosts:: >sudo vi hosts
+
+[web_servers]
+node1@172.31.11.24
+
+[App_servers]
+
+node2@172.31.0.185
+ansible@172.31.6.13
+
+[DB_servers]
+
+node1@172.31.11.24
+node2@172.31.0.185
+ansible@172.31.6.13
+ 
+i want to insatll 3 spfwares :: below playbook name -----> installsoftware.yml
+==============================
+
+---
+- hosts: web_server
+  
+  become: yes
+  
+  tasks:
+  
+  -  name: install git
+    
+     apt:
+     
+       name: git
+     
+       state: present
+     
+       update_cache: yes
+
+  -  name: install tree
+    
+     apt:
+     
+       name: tree
+     
+       state: present  
+
+  -  name: install apache
+  
+     apt:
+     
+       name: apache2
+     
+       state: present
+
+once above two files created run the below command
+
+>ansible-playbook -i hosts installsoftware.yml
+     
+![image](https://github.com/user-attachments/assets/36d33a9a-b113-402c-80f7-1e9c404a245b)
+
+>ansible -i hosts -m ping Webserver
+
+Best practice is you need to create our own inventories
+
+>sudo vi hosts
+
+after ran the above yaml, please try to access all machines with IPaddresss
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/2210159f-38b4-4bcb-bd33-de44bafb319b" />
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/c9d3e9a8-d6a7-4fe2-a4a5-c86b94569cff" />
+
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/335cbddd-d900-407f-847b-066eeaf3c27b" />
+
+
+
+
+Please enabled Inbound and Outbound rules::
+=======================================
+
+Inbound and outbound rules refer to the types of network traffic that are allowed or denied to and from a system, such as a server, virtual machine, or network device. These rules are typically defined in firewalls or security groups (such as in cloud environments like AWS, Azure, or Google Cloud). The primary goal is to control which data can enter or leave a network, ensuring security and proper access control.
+
+Here’s a detailed explanation of inbound and outbound rules:
+
+ Inbound Rules::
+Inbound rules control traffic entering a system or network. These rules define which types of external traffic are allowed to reach a server, instance, or device.
+
+Common Uses:
+Allowing specific users or services to access the system.
+
+Restricting access to the system from unauthorized users.
+
+Opening ports for services like web servers (HTTP, HTTPS), SSH, database connections, etc
+
+Allowing incoming traffic on port 80 (HTTP) so that users can access a web server.
+
+Outbound Rules::
+Outbound rules control traffic leaving a system or network. These rules define which traffic is allowed to exit a server or device and reach external destinations.
+
+Common Uses:
+Allowing a server to access external services like APIs, databases, or external servers.
+
+Restricting unwanted traffic from the system to external destinations.
+
+Controlling the flow of outgoing traffic to ensure compliance with security policies.
+
+Allow HTTP/HTTPS: Allow outbound traffic on ports 80 (HTTP) and 443 (HTTPS) to any IP:
+
 
