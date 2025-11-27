@@ -5918,12 +5918,15 @@ https://www.geeksforgeeks.org/how-to-install-tomcat-using-ansible-playbook/
 
 Executing ansible in 2 ways
 1.	Adhoc command  yearly base
+
 2.	Playbook (YAML/YML) format use for repetitive work
 
 When we can use adhoc commands  ->I want restart servers yearly base 
 
 if you can use system inventory, below is the command
+
 >ansible-playbook <playbookname>
+
 >ansible-playbook hello-world.yml
 
 I don’t want to use system level inventory
@@ -5946,16 +5949,21 @@ I want to create my own inventory
 Copy all the hosts with groups like below
 
 [web_servers]
+
 node1@172.31.23.83
 
 [app_servers]
+
 node2@172.31.23.199
+
 ansible@172.31.24.75
 
 [DB_servers]
 
 node1@172.31.23.83
+
 node2@172.31.23.199
+
 ansible@172.31.24.75
 
 
@@ -5975,17 +5983,21 @@ static inventory groups defined in the standard INI or YAML format.
 # Define groups of hosts:: >sudo vi srhosts
 
 [web_servers]
+
 node1@172.31.11.24
 
 [App_servers]
 
 node2@172.31.0.185
+
 ansible@172.31.6.13
 
 [DB_servers]
 
 node1@172.31.11.24
+
 node2@172.31.0.185
+
 ansible@172.31.6.13
  
 i want to insatll 3 spfwares :: below playbook name -----> installsoftware.yml
