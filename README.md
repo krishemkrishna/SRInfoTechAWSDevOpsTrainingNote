@@ -6095,3 +6095,416 @@ Controlling the flow of outgoing traffic to ensure compliance with security poli
 Allow HTTP/HTTPS: Allow outbound traffic on ports 80 (HTTP) and 443 (HTTPS) to any IP:
 
 
+
+
+27/11/2025::
+=============
+
+Install LAMP on ubuntu 24.04::
+==================================
+
+A LAMP stack stands for Linux, Apache, MySQL, and PHP, which is a popular open-source software stack used for web development. It provides everything you need to set up a dynamic website or web application.
+
+Here’s a quick overview of each component:
+
+Linux: The operating system (in this case, Ubuntu).
+
+Apache: The web server that serves your website’s files.
+
+MySQL: The database management system for storing and retrieving data.
+
+PHP: The programming language used for dynamic web page generation.
+
+
+
+Manual Steps::
+====================
+
+https://www.digitalocean.com/community/tutorials/how-to-install-lamp-stack-on-ubuntu
+
+
+>sudo apt update
+
+>sudo apt install apache2
+
+>sudo apt install mysql-server
+
+>sudo apt install php
+
+>sudo apt install libapache2-mod-php
+
+>sudo apt install php-mysql
+
+>sudo systemctl restart apache2
+
+>sudo apt install php-cli
+
+>sudo nano /var/www/html/info.php
+
+above steps are manually installed all required softwares in LAMP project but my requirement is to write a Playbook for those manuall steps
+
+
+Playbook for LAMP::  phppackage.yml
+=====================================
+
+
+
+---
+- hosts: all
+
+  become: yes
+
+  tasks:
+  
+  -  name: install apache2
+
+     apt:
+
+     name: apache2
+
+     state: present
+
+     update_cache: yes
+
+  -  name: install php
+
+      apt:
+
+      name: php
+
+      state: present  
+
+  -  name: install mysql-server
+
+     apt:
+
+      name: mysql-server
+
+      state: present
+     
+  -  name: install libapache2-mod-php
+
+     apt:
+
+     name: libapache2-mod-php
+
+     state: present
+                   
+  -  name: install  php-mysql
+
+     apt:
+
+     name: php-mysql
+
+     state: present
+     
+  -  name: restart apache
+
+     service:
+
+     name: apache2
+
+      enabled: true
+
+     state: restarted
+
+  -  name: install php-cli
+
+     apt:
+
+     name: php-cli
+
+      state: present 
+
+  -  name: copy module info.php
+
+     copy:
+
+     src: info.php
+
+     dest: /var/www/html/info.php     
+
+
+Copy Module::
+=========
+
+https://docs.ansible.com/ansible/latest/collections/ansible/builtin/copy_module.html
+
+Service Module::
+==================
+
+https://docs.ansible.com/ansible/latest/collections/ansible/builtin/service_module.html
+
+info.php ::
+==========
+
+
+hosts grouping:
+================
+
+![image](https://github.com/user-attachments/assets/2eb4e4d2-bda2-44fa-8e86-d4b5bd51ed9e)
+
+
+[web_servers]
+node1@172.31.11.24
+
+[App_servers]
+
+node2@172.31.0.185
+ansible@172.31.6.13
+
+[DB_servers]
+
+node1@172.31.11.24
+node2@172.31.0.185
+ansible@172.31.6.13
+
+
+Reference flow::
+==============
+ansible@ip-172-31-28-207:/etc/ansible/playbook$ ls
+
+hosts  info.php  installsoftwares.yml  phppackage.yml
+
+ansible@ip-172-31-28-207:/etc/ansible/playbook$ sudo vi phppackage.yml
+
+ansible@ip-172-31-28-207:/etc/ansible/playbook$ sudo vi srhosts
+
+ansible@ip-172-31-28-207:/etc/ansible/playbook$ sudo vi phppackage.yml
+
+ansible@ip-172-31-28-207:/etc/ansible/playbook$ ansible-playbook -i srhosts phppackage.yml
+
+ansible@ip-172-31-28-207:/etc/ansible/playbook$ sudo vi info.php
+
+ansible@ip-172-31-28-207:/etc/ansible/playbook$ ansible-playbook -i srhosts phppackage.yml
+
+PLAY [Webservers] *********************************************************************************************
+
+TASK [Gathering Facts] ****************************************************************************************
+[WARNING]: Platform linux on host localhost is using the discovered Python interpreter at /usr/bin/python3.12,
+but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.17/reference_appendices/interpreter_discovery.html for more
+information.
+ok: [localhost]
+[WARNING]: Platform linux on host ansiblenode2@172.31.30.200 is using the discovered Python interpreter at
+/usr/bin/python3.12, but future installation of another Python interpreter could change the meaning of that
+path. See https://docs.ansible.com/ansible-core/2.17/reference_appendices/interpreter_discovery.html for more
+information.
+ok: [ansiblenode2@172.31.30.200]
+[WARNING]: Platform linux on host ansiblenode1@172.31.20.135 is using the discovered Python interpreter at
+/usr/bin/python3.12, but future installation of another Python interpreter could change the meaning of that
+path. See https://docs.ansible.com/ansible-core/2.17/reference_appendices/interpreter_discovery.html for more
+information.
+ok: [ansiblenode1@172.31.20.135]
+
+TASK [install apache2] ****************************************************************************************
+ok: [ansiblenode2@172.31.30.200]
+ok: [ansiblenode1@172.31.20.135]
+ok: [localhost]
+
+TASK [install php] ********************************************************************************************
+ok: [ansiblenode1@172.31.20.135]
+ok: [ansiblenode2@172.31.30.200]
+ok: [localhost]
+
+TASK [install mysql-server] ***********************************************************************************
+ok: [ansiblenode1@172.31.20.135]
+ok: [ansiblenode2@172.31.30.200]
+ok: [localhost]
+
+TASK [install libapache2-mod-php] *****************************************************************************
+ok: [ansiblenode1@172.31.20.135]
+ok: [ansiblenode2@172.31.30.200]
+ok: [localhost]
+
+TASK [install  php-mysql] *************************************************************************************
+ok: [ansiblenode1@172.31.20.135]
+ok: [ansiblenode2@172.31.30.200]
+ok: [localhost]
+
+TASK [restart apache] *****************************************************************************************
+changed: [ansiblenode2@172.31.30.200]
+changed: [localhost]
+changed: [ansiblenode1@172.31.20.135]
+
+TASK [install php-cli] ****************************************************************************************
+ok: [ansiblenode1@172.31.20.135]
+ok: [localhost]
+ok: [ansiblenode2@172.31.30.200]
+
+TASK [copy module info.php] ***********************************************************************************
+changed: [localhost]
+changed: [ansiblenode2@172.31.30.200]
+changed: [ansiblenode1@172.31.20.135]
+
+PLAY RECAP ****************************************************************************************************
+ansiblenode1@172.31.20.135 : ok=9    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+ansiblenode2@172.31.30.200 : ok=9    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+localhost                  : ok=9    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+
+
+Please execute above steps we will see the php insatlled on all 3 machines
+
+![image](https://github.com/user-attachments/assets/d49aa2d0-69ad-4c40-8408-2ccf3edbf838)
+
+![image](https://github.com/user-attachments/assets/74b9e6dd-8fb1-452f-85f1-faffd48d7dae)
+
+![image](https://github.com/user-attachments/assets/6d58255a-e6ea-44b7-a4e2-39f8598358b3)
+
+
+info.php::
+===========
+
+  <body>
+    <h1><?php
+phpinfo();</h1>
+
+   
+
+
+loop::
+===========
+
+
+In Ansible, loops are used to repeat tasks over a list of items, making automation more efficient and reducing redundancy in playbooks. You can loop through arrays, dictionaries, and other types of data in Ansible to execute tasks multiple times.
+
+There are several ways to use loops in Ansible, and here are the most common methods:
+
+1. Using loop keyword
+The loop keyword is the most common way to iterate over a list of items. Here's an example of how to use it:
+
+https://spacelift.io/blog/ansible-loops
+
+https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_loops.html
+
+https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_loops.html
+
+
+Examples::
+==========
+
+---
+- hosts: Webservers
+
+  become: yes
+
+  tasks:
+
+    - name: Install all packages
+   
+      apt:
+    
+	name: "{{ item }}"
+
+        state: present
+
+     loop:
+        -  apache2
+        -  php
+        -  php-mysql
+        -  libapache2-mod-php
+        -  php-cli
+    -  name: restart apache
+
+        service:
+
+       name: apache2
+
+        enabled: true
+
+       state: restarted
+
+    -  name: copy module info.php
+
+       copy:
+
+       src: info.php
+
+       dest: /var/www/html/info.php  
+
+
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/375e7785-3440-448e-bee3-e4e92ee5da53" />
+
+
+
+http://34.227.192.10/info.php
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/ed0477eb-5c9e-4902-9443-abdcd0a0fc79" />
+
+
+please verify all the node machines 
+
+
+http://13.218.99.248/info.php
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/58969708-7c41-4a97-ac0d-7edf78dc8e37" />
+
+
+
+
+Setup module in ansible::
+============================
+
+
+https://docs.ansible.com/ansible/latest/collections/ansible/builtin/setup_module.html
+
+Setup module is used to collect the facts
+
+Facts information gather from nodes called facts
+
+>ansible -I hosts -m setup Webserver
+
+Using filter command
+
+>ansible -i hosts -m setup -a "filter=*os*" Webserver
+
+ansible_os_family": "Debian"
+
+Ansible when statements
+
+https://docs.ansible.com/ansible/latest/user_guide/playbooks_conditionals.html#the-when-statement
+
+
+ansible_os_family": "Debian"
+
+When condition is always used bottom of the script and using scrips we can able to run a playbook on a different platforms 
+
+1.Debian
+
+2.Redhat
+---
+- hosts: Webserver
+
+  become: yes
+
+  tasks:
+  - name: install apache
+
+    apt:
+      name: apache2
+
+    state: present
+
+    update_cache: yes
+
+    when: ansible_os_family == "Debian"  
+  - name: install apache
+
+    yum:
+
+    name: httpd
+
+     state: present
+
+    when: ansible_os_family == "Redhat"
+
+
+
+
+In Ansible, variables are used to store values that can be referenced and used throughout your playbooks, roles, and tasks. This allows for dynamic, reusable, and flexible automation. Here’s a basic breakdown of how Ansible variables work and the different ways you can define and use them:
+
