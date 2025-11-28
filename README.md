@@ -6346,11 +6346,11 @@ localhost                  : ok=9    changed=2    unreachable=0    failed=0    s
 
 Please execute above steps we will see the php insatlled on all 3 machines
 
-![image](https://github.com/user-attachments/assets/d49aa2d0-69ad-4c40-8408-2ccf3edbf838)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/ed0477eb-5c9e-4902-9443-abdcd0a0fc79" />
 
-![image](https://github.com/user-attachments/assets/74b9e6dd-8fb1-452f-85f1-faffd48d7dae)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/ed0477eb-5c9e-4902-9443-abdcd0a0fc79" />
 
-![image](https://github.com/user-attachments/assets/6d58255a-e6ea-44b7-a4e2-39f8598358b3)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/ed0477eb-5c9e-4902-9443-abdcd0a0fc79" />
 
 
 info.php::
@@ -6457,11 +6457,13 @@ Setup module is used to collect the facts
 
 Facts information gather from nodes called facts
 
->ansible -I hosts -m setup Webserver
+>ansible -I srhosts -m setup Webserver
 
 Using filter command
 
->ansible -i hosts -m setup -a "filter=*os*" Webserver
+>ansible -i srhosts -m setup -a "filter=*os*" Webserver
+
+>ansible -i srhosts -m setup -a "filter=*ansible_os_family*" Webserver
 
 ansible_os_family": "Debian"
 
