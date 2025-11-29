@@ -6507,6 +6507,269 @@ When condition is always used bottom of the script and using scrips we can able 
 
 
 
+28/11/2025::
+===============
+
+
+Ansible Variable::
+===================
 
 In Ansible, variables are used to store values that can be referenced and used throughout your playbooks, roles, and tasks. This allows for dynamic, reusable, and flexible automation. Here’s a basic breakdown of how Ansible variables work and the different ways you can define and use them:
 
+
+define variables in 3 places::
+===============================
+
+1.	Inventory level  lowest priority
+
+   a. host level variabels
+  
+  node1@172.31.27.17 package_name=apache2
+  
+  package_name=httpd
+  
+  b. group level variabels
+
+[web_servers]
+node1@172.31.27.17 
+
+package_name=apache2
+
+2.playbook level  ---2nd highest priroty 
+
+vars:
+    package_name: git
+
+3.	Command line level –highest level priority
+
+>ansible-playbook -i srinfotechhosts -e "package_name=apache2" variable.yml
+
+Inventory variables: These are defined in the inventory file (or dynamic inventory) for specific hosts or groups.
+
+[webservers]
+ansiblenode1@172.31.20.135  package_name=git
+ansiblenode2@172.31.30.200 package_name=apache2
+localhost 
+
+[webservers:vars]
+ansiblenode2@172.31.30.200 
+localhost 
+
+package_name=httpd
+
+Playbook variables: You can define variables directly within your playbooks using the vars section.
+
+---
+- hosts: Webservers
+
+  become: yes
+
+  vars:
+
+  pacakge_name: git
+
+  tasks:
+    
+    - name: Install all packages
+
+      apt:
+
+      name: "{{ pacakge_name }}"
+
+      state: present
+
+      Command-line variables: You can pass variables to your playbooks at runtime using the -e or --extra-vars option.
+      
+
+      >ansible-playbook -i hosts -e "package_name=apache2" variables2.yml
+
+
+
+Ansible resolves variable values based on a specific precedence order. The order from highest to lowest precedence is:
+====================================================================================================================
+
+Extra-vars (-e on the command line): Command-line variables take the highest precedence.
+
+Playbook variables: Variables defined within the playbook.
+
+Inventory variables: Variables set in the inventory.
+
+Debug & vars & in Ansible module::
+==========================================
+
+https://docs.ansible.com/ansible/latest/collections/ansible/builtin/debug_module.html
+
+
+---
+- hosts: web_servers
+
+  become: yes
+
+  tasks:
+
+   - name: install apache2
+    apt:
+      name: apache2
+      state: present
+      update_cache: yes
+  - name: display output    
+    debug:
+      msg: apache2 install successfully  
+  - name: restart apache2
+    service:
+      name: apache2
+      state: restarted
+  - name: display output    
+    debug:
+      msg: apache2 restarted successfully    
+  - name: install mysql-server
+    apt:
+      name: mysql-server
+      state: present
+  - name: display output    
+    debug:
+      msg: mysql-server install successfully    
+  - name: install php
+    apt:
+      name: php
+      state: present  
+  - name: display output    
+    debug:
+      msg: php installed successfully
+  - name: install libapache2-mod-php
+    apt:
+      name: libapache2-mod-php
+      state: present
+  - name: display output    
+    debug:
+      msg: libapache2-mod-php installed successfully    
+  - name: install php-mcrypt
+    apt:
+      name: php-mcrypt
+      state: present
+  - name: display output    
+    debug:
+      msg: php-mcrypt installed successfully      
+  - name: install php-mysql
+    apt:
+      name: php-mysql
+      state: present
+  - name: display output    
+    debug:
+      msg: php-mysql installed successfully     
+  - name: restart apache2
+    service:
+      name: apache2
+      state: restarted
+  - name: display output    
+    debug:
+      msg: apache2 restarted successfully     
+  - name: install php-cli
+    apt:
+      name: php-cli
+      state: present
+  - name: display output    
+    debug:
+      msg: php-cli installed successfully     
+  - name: copy the info.php file to destination folder
+    copy:
+      src: info.php
+      dest: /var/www/html/info.php
+  - name: display output    
+    debug:
+      msg: info php file is copied successfully    
+
+
+
+>ansible-playbook -i srhosts -vvv variable.yaml  --------> verbose logs purpose ,please run this command
+
+
+![image](https://github.com/user-attachments/assets/7d18a6e5-a53b-436b-bf26-dbe1db0e89af)
+
+
+Loops & Debug Module::
+=========================
+---
+- hosts: web_servers
+  become: yes
+  tasks:
+  - name: install apache2
+    apt:
+      name: apache2
+      state: present
+      update_cache: yes
+  - name: display output    
+    debug:
+      msg: apache2 install successfully     
+  - name: install all packages
+    apt:
+      name: "{{ item }}"
+      state: present
+  - name: display output    
+    debug:
+      msg: apache2 install successfully     
+    loop:
+      - mysql-server
+      - php
+      - libapache2-mod-php
+      - php-mcrypt
+      - php-mysql
+      - php-cli
+  - name: restart apache2
+    service:
+      name: apache2
+      state: restarted
+  - name: display output    
+    debug:
+      msg: apache2 install successfully         
+  - name: copy the info.php file to destination folder
+    copy:
+      src: info.php
+      dest: /var/www/html/info.php
+  - name: display output    
+    debug:
+      msg: apache2 install successfully               
+
+
+Class NOte::
+==============
+
+variables---> 
+
+Ansible variables:: 3 types
+
+package_name=git
+
+1.inventory level variabels  ----lowest priroty 
+ 
+  a.host level variabels
+  
+  node1@172.31.23.83 package_name=git
+  
+  b.group level variabels
+  
+  [web_servers]
+
+node1@172.31.23.83 package_name=git
+
+node2@172.31.23.199
+
+package_name=httpd
+
+
+2.playbook level  ---->2nd highest priority to picking the variabels
+
+vars:
+    package_name: git
+
+
+3.command line level (cli)  ---highest priorty to picking the variabels
+
+>ansible-playbook -i srhosts -e "package_name=apache2"variables.yml
+
+
+verbose logs::
+
+>ansible-playbook -i srhosts -vvv -e "package_name=apache2" variables.yml
+
+debug module::
