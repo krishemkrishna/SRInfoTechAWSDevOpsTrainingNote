@@ -6772,4 +6772,399 @@ verbose logs::
 
 >ansible-playbook -i srhosts -vvv -e "package_name=apache2" variables.yml
 
-debug module::
+
+
+29/11/2025::
+===============
+
+
+Ansible Roles::
+===================
+
+
+<img width="1648" height="648" alt="image" src="https://github.com/user-attachments/assets/ebb677ec-7471-46ec-a449-b154fda14ff6" />
+
+
+Ansible roles are a way of organizing playbooks and tasks in a modular, reusable, and maintainable structure. They allow you to break down complex playbooks into smaller, focused units of functionality that can be easily shared and reused across different projects. Here's a more detailed look at Ansible roles:
+
+https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_reuse_roles.html
+
+1.Written ansible in a reusable fashion
+
+2.How do I use someone else’s work
+
+3.Ansible galaxy is a place where we can find reusable roles
+
+https://galaxy.ansible.com/
+
+4.Which we can use in your script
+
+
+
+install roles
+
+ > Ansible-galaxy install <rolename>
+
+ >ansible-galaxy install my_role
+
+create my own role::
+
+> ansible-galaxy init <rolename>
+
+>ansible-galaxy init my_role
+
+
+
+Structure of Ansible Roles::
+===================
+
+my_role/
+├── defaults/
+│   └── main.yml            # Default variables
+├── files/
+│   └── somefile            # Files to be copied to the target
+├── handlers/
+│   └── main.yml            # Handlers (usually for service restarts)
+├── meta/
+│   └── main.yml            # Metadata about the role
+├── tasks/
+│   └── main.yml            # The main tasks (this file includes other task files if needed)
+├── templates/
+│   └── config.j2           # Jinja2 templates for dynamic file creation
+├── tests/
+│   └── test.yml            # Test playbooks to verify the role works
+├── vars/
+│   └── main.yml            # Custom variables
+
+
+Using Roles in Playbooks
+Once you've defined a role, you can use it in your playbook like this:
+
+---
+- name: Example Playbook using roles
+  hosts: all
+  become: yes
+  roles:
+    - my_role
+
+Benefits of Using Roles
+Reusability: Roles can be reused across different playbooks and projects.
+
+Modularity: Roles allow you to organize your playbook into smaller, manageable parts.
+
+Clarity: Each role focuses on a specific task or function, making your playbooks more understandable.
+
+Example Role: Installing Tomcat
+
+https://galaxy.ansible.com/ui/standalone/roles/robertdebock/tomcat/install/
+
+
+Create my own role
+
+> Ansible-galaxy init rolename
+
+![image](https://github.com/user-attachments/assets/af275783-63b6-40ab-a319-645db283a40f)
+
+![image](https://github.com/user-attachments/assets/34cfe34b-b8bc-4026-9014-0c07c952c3af)
+
+Install tomcat
+
+If you're looking to install or use an Ansible role for Tomcat from Ansible Galaxy, you can search for available roles and collections related to Tomcat. Here's how you can find and use a role related to Tomcat from Galaxy.
+1.	Search for a Tomcat Role
+
+https://galaxy.ansible.com/
+
+To search for a role related to Tomcat on Ansible Galaxy, you can use the following command:
+bash
+Copy
+ansible-galaxy search tomcat
+This will return a list of roles related to Tomcat that you can install and use.
+
+2. Install a Tomcat Role
+Once you’ve found a suitable role for Tomcat, you can install it using the ansible-galaxy install command.
+For example, if you find a role called geerlingguy.tomcat, you can install it by running:
+bash
+Copy
+
+> ansible-galaxy install geerlingguy.tomcat
+
+This will download and install the role into your ~/.ansible/roles/ directory (or the path defined in your ansible.cfg file).
+3. Use the Installed Tomcat Role in Your Playbook
+After installing the role, you can use it in your playbook. Here’s an example of a simple playbook that installs and configures Tomcat:
+yaml
+Copy
+
+Deploywar.yml::
+=============
+
+---
+- hosts: localhost
+  become: yes
+  roles:
+  - robertdebock.java
+  - robertdebock.tomcat
+ 
+  > ansible-playbook -i hosts Deploywar.yml
+  
+
+![image](https://github.com/user-attachments/assets/306fd1fc-8c51-40f7-81b6-41a44e6ee915)
+
+  
+This will use the geerlingguy.tomcat role to set up Tomcat on your webservers hosts.
+
+https://galaxy.ansible.com/robertdebock/tomcat
+
+![image](https://github.com/user-attachments/assets/29cfc5e4-b8e6-494b-a462-d8a11699df12)
+
+Deploywar.yml
+
+![image](https://github.com/user-attachments/assets/d7f4d510-bee2-4d32-ad56-7906a8574e93)
+
+![image](https://github.com/user-attachments/assets/adad9ea6-ed52-457e-a9eb-adb2d19ad026)
+
+![image](https://github.com/user-attachments/assets/a4c880aa-f378-4085-9122-3ef93a25e09a)
+
+
+By default  tomcat run port 8080
+
+http://18.236.181.244:8080/
+
+http://34.216.173.44:8080/manager/html
+
+![image](https://github.com/user-attachments/assets/fa5faaeb-ec9e-43f2-9184-7bf46f1433c4)
+
+
+> /opt/tomcat/conf
+
+>sudo vi tomcat-user.xml
+
+><role rolename="manager-gui"/>
+
+<role rolename="manager"/>
+
+ <role rolename="manager-script"/>
+
+ <role rolename="manager-jmx"/>
+ 
+ <role rolename="manager-status"/>
+ 
+ <role rolename="tomcat"/>
+
+ <role rolename="admin"/>
+
+ <user username="admin" password="admin" roles="manager-gui,manager-script,manager-jmx,manager-status,tomcat,admin,manager"/>
+
+
+ <img width="940" height="529" alt="image" src="https://github.com/user-attachments/assets/6f29bc01-cc9c-4917-9add-e65325cb83f0" />
+
+
+<img width="940" height="529" alt="image" src="https://github.com/user-attachments/assets/f2b606e6-58ff-48ed-a79b-2aecbee644f2" />
+
+
+We can seen shutdown.sh & startup.sh
+>sudo sh shutdown.sh
+
+<img width="940" height="529" alt="image" src="https://github.com/user-attachments/assets/6a10157d-80ae-40d2-8ed2-5eefbecea344" />
+
+
+>sudo sh startup.sh
+
+<img width="940" height="529" alt="image" src="https://github.com/user-attachments/assets/62c3f5f5-e26d-4014-81c1-ec194e6fd2e5" />
+
+
+After added we need to restart the tomcat
+>sudo service tomcat status
+
+<img width="940" height="529" alt="image" src="https://github.com/user-attachments/assets/9007a5d6-1b03-4c6c-b2f5-29ec69913240" />
+
+
+Resolutions for tomcat manager access::
+=======================================
+
+https://stackoverflow.com/questions/36703856/access-tomcat-manager-app-from-different-host
+
+
+For Tomcat v8.5.4 and above, the file <tomcat>/webapps/manager/META-INF/context.xml has been adjusted:
+
+<Context antiResourceLocking="false" privileged="true" >
+    <Valve className="org.apache.catalina.valves.RemoteAddrValve"
+         allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" />
+</Context>
+
+		Change this file to comment the Valve:
+<Context antiResourceLocking="false" privileged="true" >
+    <!--
+    <Valve className="org.apache.catalina.valves.RemoteAddrValve"
+    allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" />
+    -->
+</Context>
+
+After that, refresh your browser (not need to restart Tomcat), you can see the manager page.
+
+
+<img width="940" height="529" alt="image" src="https://github.com/user-attachments/assets/f1ba1fed-334a-4c30-9ec3-f3b73ccdeada" />
+
+
+Most of the work is done 
+Where is my war file
+
+
+
+Deploy Onlinebook store war to tomcat server using roles::
+==============================================================
+
+>If war file is available in local machine use copy module
+
+>if war file is available other machine(internet) use get_url module
+
+Tomcat by default install
+
+>/opt/tomcat
+
+From root folder we need to access webapps folder in tomcat otherwise permission denied
+
+<img width="940" height="529" alt="image" src="https://github.com/user-attachments/assets/d9c49b34-6eb5-4c60-9a09-6caa62258acf" />
+
+
+<img width="940" height="529" alt="image" src="https://github.com/user-attachments/assets/baebcc3a-b9f9-47ff-9290-94e96ee4e621" />
+
+
+
+---
+- hosts: Webservers
+  become: yes
+  roles:
+  - robertdebock.java
+  - robertdebock.tomcat
+  tasks:
+  - name: copy war
+    get_url:
+      url: https://srinfotech.s3.us-west-2.amazonaws.com/jobs/AnsibleIntegartedWith+Jenkins/5/onlinebookstore.war
+      dest: /opt/tomcat/webapps/onlinebookstore.war
+
+
+![image](https://github.com/user-attachments/assets/d43d4d4a-ee8d-4dd8-af09-b71dfdf2da6f)
+
+Create S3 Bucket in AWS account::
+===============================
+
+Go to AWS account and search S3 bucket 
+
+S3=SSS=simple storage services
+
+![image](https://github.com/user-attachments/assets/8c1b5637-9392-414d-ab0b-21bf9d882609)
+
+Select S3
+
+![image](https://github.com/user-attachments/assets/c62a298f-185d-43ec-9d62-8b874e7627ec)
+
+Click Create bucket
+
+![image](https://github.com/user-attachments/assets/097eedf8-8e2f-48f5-876f-2c3debfccda8)
+
+Bucket name provide
+
+![image](https://github.com/user-attachments/assets/669f5b5a-d4e4-43ee-add1-e6be36171ec4)
+
+Object Ownership  ---- ACLs enabled selected
+
+
+Unchecked Block all public access
+
+
+![image](https://github.com/user-attachments/assets/61cac919-cbbd-4b39-9121-d1ed20e33bcd)
+
+Ackened 
+
+![image](https://github.com/user-attachments/assets/9edcd3b0-c71a-4e78-8132-0469a192cd82)
+
+Click crete bucket
+
+![image](https://github.com/user-attachments/assets/c0b39afe-325c-4d82-9ea6-2204896c1f55)
+
+S3 bucket is created in AWS
+
+![image](https://github.com/user-attachments/assets/702e2185-29cd-43d2-9176-ad9788907bc8)
+
+S3 bucket Created successfully
+
+
+![image](https://github.com/user-attachments/assets/3c2855d7-ae2c-4f18-8ce7-3b766211b811)
+
+Click Bucket
+
+![image](https://github.com/user-attachments/assets/3000b5bc-8691-40cc-b5ee-e378fe813bf6)
+
+
+Click Upload 
+
+
+![image](https://github.com/user-attachments/assets/71efca18-9c4a-4bad-97ff-6e6baf6b559c)
+
+Click Add Files
+
+
+![image](https://github.com/user-attachments/assets/e74175f3-ca04-47bb-977b-9f9df1cf7139)
+
+Select Onlinebookstore.war file
+
+![image](https://github.com/user-attachments/assets/89cac099-5c85-4a29-91e9-8868f2e2f020)
+
+Select check box to upload the onlinebookstore.war file
+
+![image](https://github.com/user-attachments/assets/30c81ce3-4605-45e9-90bd-b719dac4d875)
+
+Click Upload
+
+![image](https://github.com/user-attachments/assets/85a5204d-b660-4d0c-8983-fc24b05427e4)
+
+Upload Succeeded
+
+![image](https://github.com/user-attachments/assets/11d79c2d-c353-404c-be41-130608b34dcb)
+
+Copy URL
+
+![image](https://github.com/user-attachments/assets/147864ff-fc89-4ae1-b104-b383cccba33b)
+
+![image](https://github.com/user-attachments/assets/37ad0996-d054-4a3b-aa57-c0480254c1c1)
+
+Copy url to below script:: onlinebookstore.yml
+===================
+
+---
+- hosts: localhost
+  become: yes
+  roles:
+  - robertdebock.java
+  - robertdebock.tomcat
+  tasks:
+  - name: copy war
+    get_url:
+      url: https://srinfotech.s3.us-west-2.amazonaws.com/jobs/AnsibleIntegartedWith+Jenkins/5/onlinebookstore.war
+      dest: /opt/tomcat/webapps/onlinebookstore.war
+
+[image](https://github.com/user-attachments/assets/402272bc-6604-4840-a406-c1cc8e95dcc6)
+
+run the playbook
+
+>ansible-playbook -i hosts onlinebookstore.yml
+
+[image](https://github.com/user-attachments/assets/4ed55d65-f16e-4314-8dba-c3a34c3ee5c2)
+
+Success
+
+[image](https://github.com/user-attachments/assets/592b947e-d422-4430-9729-98724403ce0d)
+
+Verify deployment in Tomcat server
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/5d684c18-b2f2-4423-955c-b49381c069f0" />
+
+
+http://54.218.133.244:8080/onlinebookstore/
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/b9844e78-13b9-4f8f-81ae-e3570c154d08" />
+
+
+
+
