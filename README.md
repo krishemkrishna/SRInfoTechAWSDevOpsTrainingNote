@@ -7052,81 +7052,107 @@ Go to AWS account and search S3 bucket
 
 S3=SSS=simple storage services
 
-![image](https://github.com/user-attachments/assets/8c1b5637-9392-414d-ab0b-21bf9d882609)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/b227e02a-e314-4872-b0c6-8b10fe51a978" />
+
 
 Select S3
 
-![image](https://github.com/user-attachments/assets/c62a298f-185d-43ec-9d62-8b874e7627ec)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/e0451685-8db4-4c08-895a-b5abe0e83a82" />
+
 
 Click Create bucket
 
-![image](https://github.com/user-attachments/assets/097eedf8-8e2f-48f5-876f-2c3debfccda8)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/501c005e-7420-490f-b055-ace557a304a9" />
+
 
 Bucket name provide
 
-![image](https://github.com/user-attachments/assets/669f5b5a-d4e4-43ee-add1-e6be36171ec4)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/b62c4b39-48b1-4f09-b5a8-a3c4f3b7fec8" />
+
 
 Object Ownership  ---- ACLs enabled selected
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/f8a462bd-d905-4c97-a091-472145145f83" />
+
 
 
 Unchecked Block all public access
 
 
-![image](https://github.com/user-attachments/assets/61cac919-cbbd-4b39-9121-d1ed20e33bcd)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/6dc398c2-4359-486c-9b1e-647b380a7eee" />
+
 
 Ackened 
 
-![image](https://github.com/user-attachments/assets/9edcd3b0-c71a-4e78-8132-0469a192cd82)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/57cc0220-cc8d-4bb6-b048-92798d53814c" />
+
 
 Click crete bucket
 
-![image](https://github.com/user-attachments/assets/c0b39afe-325c-4d82-9ea6-2204896c1f55)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/0de303d0-8762-4efa-9b27-81bcaed32bd5" />
+
 
 S3 bucket is created in AWS
 
-![image](https://github.com/user-attachments/assets/702e2185-29cd-43d2-9176-ad9788907bc8)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/c1938c50-7527-4c3e-8064-c1b9106176a0" />
+
 
 S3 bucket Created successfully
 
 
-![image](https://github.com/user-attachments/assets/3c2855d7-ae2c-4f18-8ce7-3b766211b811)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/ddc27154-1bb3-4db3-a8e7-660b1676ec53" />
+
 
 Click Bucket
 
-![image](https://github.com/user-attachments/assets/3000b5bc-8691-40cc-b5ee-e378fe813bf6)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/193df1c8-6a49-44eb-8f7a-323420c69191" />
+
 
 
 Click Upload 
 
 
-![image](https://github.com/user-attachments/assets/71efca18-9c4a-4bad-97ff-6e6baf6b559c)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/1e9c62be-f8e6-4c3b-a15c-eed7d1c0a486" />
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/e8857938-9640-495c-89fd-f879f9939501" />
+
+
 
 Click Add Files
 
 
-![image](https://github.com/user-attachments/assets/e74175f3-ca04-47bb-977b-9f9df1cf7139)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/aa330694-067e-4fd8-9070-b19d5bb0c57f" />
+
 
 Select Onlinebookstore.war file
 
-![image](https://github.com/user-attachments/assets/89cac099-5c85-4a29-91e9-8868f2e2f020)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d43bedfc-b318-4e17-8579-950efc2d91e8" />
+
 
 Select check box to upload the onlinebookstore.war file
 
-![image](https://github.com/user-attachments/assets/30c81ce3-4605-45e9-90bd-b719dac4d875)
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/6a59a3d8-b3f0-4a06-8e15-c8da7ea9e4a0" />
+
 
 Click Upload
 
-![image](https://github.com/user-attachments/assets/85a5204d-b660-4d0c-8983-fc24b05427e4)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/3973c369-bad1-48f6-8f63-cdd5937e2ad1" />
+
 
 Upload Succeeded
 
-![image](https://github.com/user-attachments/assets/11d79c2d-c353-404c-be41-130608b34dcb)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/7810e955-378c-4d3a-81a2-c81dacfdac5a" />
+
 
 Copy URL
 
-![image](https://github.com/user-attachments/assets/147864ff-fc89-4ae1-b104-b383cccba33b)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/7c8afd34-05d7-48a7-87db-98d6f2fd468b" />
 
-![image](https://github.com/user-attachments/assets/37ad0996-d054-4a3b-aa57-c0480254c1c1)
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/1f6a13b3-6f47-4fcf-891d-ef2925a7c2f4" />
+
 
 Copy url to below script:: onlinebookstore.yml
 ===================
@@ -7140,7 +7166,9 @@ Copy url to below script:: onlinebookstore.yml
   tasks:
   - name: copy war
     get_url:
+
       url: https://srinfotech.s3.us-west-2.amazonaws.com/jobs/AnsibleIntegartedWith+Jenkins/5/onlinebookstore.war
+
       dest: /opt/tomcat/webapps/onlinebookstore.war
 
 [image](https://github.com/user-attachments/assets/402272bc-6604-4840-a406-c1cc8e95dcc6)
